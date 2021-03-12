@@ -2,7 +2,9 @@
 
 > Universal outlining engine. Generate an outline of any text-based document!
 
-Skyliner is a regular expression based document outlining engine. The goal is to support outlining as many different text-based formats as possible. It was born out of frustration that [Atom-IDE](https://ide.atom.io/) doesn't support half of the file formats I usually work with.
+Skyliner is a regular expression based streaming document outlining engine. The goal is to support outlining as many different text-based formats as possible. It reads the input line-by-line and emits outline items.
+
+It was born out of frustration that [Atom-IDE](https://ide.atom.io/) doesn't support half of the file formats I usually work with.
 
 It can be used in 2 ways:
 

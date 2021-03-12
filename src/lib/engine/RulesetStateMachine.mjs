@@ -3,8 +3,8 @@
 class RulesetStateMachine {
 	constructor(states) {
 		this.states = states;
-		if(typeof this.states.default !== "string")
-			throw new Error(`Error: The given states object didn't contain a default state`);
+		if(typeof this.states.default === "undefined")
+			throw new Error(`Error: The given states object doesn't contain a default state`);
 		this.state = "default";
 		
 		this.__check();

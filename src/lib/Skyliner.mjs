@@ -17,10 +17,22 @@ class Skyliner {
 			"../langs",
 			`${lang.replace(/[^a-zA-Z0-9_\-]+/g, "").toLowerCase()}.mjs`
 		);
-		return (await import(filepath)).default;
+		let result = (await import(filepath)).default;
+		// console.log(`[DEBUG:Skyliner/__fetch_states] result`, result);
+		return result;
 	}
 	
+	/**
+	 * Generates an outline for the given input.
+	 * Basically an easay-to-use wrapper around .outline_iterate().
+	 * @param	{string}	lang	The language of the given input.
+	 * @param	{string|stream.Readable|Buffer|Array}	source	Source input to process. Passed straight to nexline (npm package), so anything that nexline supports is supported here.
+	 * @return	{Promise<Object[]>}	An array of outline items. May potentially be nested via the children property thereon.
+	 */
 	async outline(lang, source) {
+		if(typeof lang !== "string")
+			throw new Error(`Error: Expected lang to be a string, but got ${typeof lang}`);
+		
 		let outline = [],
 			stack = [];
 		
@@ -50,6 +62,13 @@ class Skyliner {
 		return outline;
 	}
 	
+	/**
+	 * Generates an outline for the given input.
+	 * Operates in a streaming fashion, operating line-by-line.
+	 * @param	{string}	lang	The language of the given input.
+	 * @param	{string|stream.Readable|Buffer|Array}	source	Source input to process. Passed straight to nexline (npm package), so anything that nexline supports is supported here.
+	 * @return	{AsyncGenerator<Object>}	An asynchronous generator that emits outline items. Items are flat and NOT nested as with .outline().
+	 */
 	async *outline_iterate(lang, source) {
 		if(!(this.lexers[lang] instanceof Lexer))
 			this.lexers[lang] = new Lexer(await this.__fetch_states(lang));

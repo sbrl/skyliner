@@ -11,7 +11,7 @@ export default async function do_outline() {
 		output = process.stdout;
 	
 	if(typeof settings.cli.lang !== "string") {
-		console.error(`Error: No language specified.`);
+		console.error(`Error: No language specified (try --lang LANGUAGE_NAME, or --help if you're confused).`);
 		process.exit(1);
 	}
 	
@@ -26,10 +26,9 @@ export default async function do_outline() {
 	if(typeof settings.cli.output == "string")
 		output = fs.createWriteStream(settings.cli.output);
 	
-	
 	const outliner = new Skyliner();
 	
-	let result = await outliner.outline(input);
+	let result = await outliner.outline(settings.cli.lang, input);
 	
 	switch(settings.format) {
 		case "text":
@@ -39,6 +38,5 @@ export default async function do_outline() {
 			await write_safe(output, JSON.stringify(result, null, `\t`));
 			break;
 	}
-	
 	await end_safe(output);
 }
