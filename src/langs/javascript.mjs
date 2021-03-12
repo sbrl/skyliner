@@ -22,7 +22,7 @@ export default {
 		brace_open: { regex: /[\{]/, depth_delta: 1 },
 		brace_close: { regex: /[\}]/, depth_delta: -1 },
 		function: {
-			regex: /function\s*\([^)]+\)/g,
+			regex: /function(\s+[a-zA-Z]\w+)?\s*\([^)]+\)/g,
 			outline: "function"
 		},
 		class: {
