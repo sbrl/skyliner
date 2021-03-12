@@ -1,5 +1,7 @@
 "use strict";
 
+import path from 'path';
+
 import CliParser from 'applause-cli';
 
 import settings from './settings.mjs';
@@ -11,6 +13,7 @@ export default async function() {
 	// 1: CLI Parsing
 	// ------------------------------------------------------------------------
 	let cli = new CliParser(path.resolve(__dirname, "../../package.json"));
+	cli.set_description("Universal outlining engine. Generate an outline of any text-based document!");
 	cli.argument("lang", "Required. The language to parse the input as.", null, "string")
 		.argument("input", "The input file to process (default: stdin)", null, "string")
 		.argument("output", "The filepath to write the result to (default: stdout)", null, "string")
