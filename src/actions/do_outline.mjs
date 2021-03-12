@@ -36,6 +36,7 @@ export default async function do_outline() {
 			break;
 		case "json":
 			await write_safe(output, JSON.stringify(result, null, `\t`));
+			await write_safe(output, `\n`);
 			break;
 	}
 	await end_safe(output);

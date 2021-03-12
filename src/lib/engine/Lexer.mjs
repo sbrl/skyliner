@@ -31,17 +31,17 @@ class Lexer {
 					match_text;
 				
 				for(let [ rule_name, rule ] of this.sm) {
-					regex.lastIndex = index;
-					let match_current = regex.exec(line);
+					rule.regex.lastIndex = index;
+					let match_current = rule.regex.exec(line);
 					if(match_current == null
 						|| match_index < match_current.index) continue;
 					
 					match_rule_name = rule_name;
 					match_rule = rule;
 					match_index = match_current.index;
-					match_text = match_current[regex.group_index || 0];
+					match_text = match_current[rule.group_index || 0];
 					// If we are actually matching a substring, bring the index forwards to the start of said substring
-					if(typeof regex.group_index == "number" && regex.group_index > 0)
+					if(typeof rule.group_index == "number" && rule.group_index > 0)
 						match_index += match_current[0].indexOf(match_text);
 				}
 				
