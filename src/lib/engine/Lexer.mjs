@@ -14,6 +14,8 @@ class Lexer {
 		 * @type {RulesetStateMachine}
 		 */
 		this.sm = states;
+		
+		this.sym_debug = Symbol.for("__LEXER_DEBUG_DATA__");
 	}
 	
 	async *iterate(source) {
@@ -50,15 +52,22 @@ class Lexer {
 				if(typeof match_rule.depth_delta === "number")
 					depth += match_rule.depth_delta;
 				
-				yield {
-					depth,
-					line: line_number,
-					index: match_index,
-					
-					text: match_text,
-					rule_name: match_rule_name,
-					rule: match_rule
-				};
+				if(match_rule.outline) {
+					yield {
+						depth,
+						line: line_number,
+						index: match_index,
+						type: match_rule.outline,
+						
+						text: match_text,
+						
+						// Debug data
+						[this.sym_debug]: {
+							rule_name: match_rule_name,
+							rule: match_rule
+						}
+					};
+				}
 				
 				index = match_index + match_text.length;
 				// If this match takes us to the end of the line, then there's no point in doing another round
