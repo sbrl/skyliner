@@ -1,6 +1,6 @@
 # Skyliner
 
-> Universal outlining engine. Generate an outline of any text-based document!
+> Universal document outlining engine. Generate an outline of any text-based document!
 
 Skyliner is a regular expression based streaming document outlining engine. The goal is to support outlining as many different text-based formats as possible. It reads the input line-by-line and emits outline items.
 
@@ -19,7 +19,7 @@ The following languages are currently supported:
 
  - javascript
 
-To add support for a new language, go to `src/langs` and create a new file (or copy an existing one) and create a definition for the new language. The filename must exactly match the name of the language you're adding.
+See below for how to add support for a new language.
 
 
 ## Specification
@@ -52,3 +52,20 @@ Type        | Meaning
 function    | A function
 class       | A class
 heading     | A heading in some kind of text document (e.g. markdown)
+
+
+## Adding a new language
+To add support for a new language, go to `src/langs` and create a new file (or copy an existing one) and create a definition for the new language. The filename must exactly match the name of the language you're adding.
+
+_Skyliner_ works through a simple state machine based system. A file must have a default export of an object containing the different possible states the state machine can be in. All languages *must* at least define a "default" state, as this is the state that the engine begins in.
+
+States can have one or more rules defined therein as an object, where the keys are the names of the rules, and the values are the rules attached thereto. 
+
+### Rule definition
+A rule is an object containing the following properties:
+
+ - `regex`: RegExp			 - Regex to match with. This is the only required item.
+ - `group_index`: Number	 - The index of the capturing group to use. By default the entire matched string is used by the Lexer.
+ - `depth_delta`: Number	 - Delta value to add to the depth in the outline tree. Useful for handling brackets etc. to get the hierarchy in the generated outline correct.
+ - `outline`: string		 - The type of outline item to generate. If not specified, no outline item will be generated.
+ - `switch_state`: string	 - The name of the alternate state to switch to. This will happen as soon as this item is chosen by the Lexer.
