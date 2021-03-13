@@ -1,0 +1,9 @@
+[
+	{
+		"depth": 0,
+		"line": 0,
+		"index": 0,
+		"type": "function",
+		"text": "function test_function()"
+	}
+]

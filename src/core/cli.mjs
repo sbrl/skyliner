@@ -17,13 +17,15 @@ export default async function() {
 	cli.argument("lang", "Required. The language to parse the input as.", null, "string")
 		.argument("input", "The input file to process (default: stdin)", null, "string")
 		.argument("output", "The filepath to write the result to (default: stdout)", null, "string")
-		.argument("json", "Output JSON instead of human-readable text", false, "boolean");
+		.argument("json", "Output JSON instead of human-readable text", false, "boolean")
+		.argument("csv", "Output CSV instead of human-readable text", false, "boolean");
 	
 	// 1: Attach to main settings
 	// ------------------------------------------------------------------------
 	settings.cli = cli.parse(process.argv.slice(2));
 	settings.format = "text";
 	if(settings.cli.json) settings.format = "json";
+	if(settings.cli.csv) settings.format = "csv";
 	
 	// 1: Execute
 	// ------------------------------------------------------------------------

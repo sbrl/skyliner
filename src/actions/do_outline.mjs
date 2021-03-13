@@ -5,6 +5,8 @@ import fs from 'fs';
 import settings from '../core/settings.mjs';
 import Skyliner from '../lib/Skyliner.mjs';
 import { write_safe, end_safe } from '../lib/io/stream_safe.mjs';
+import outline_render_text from '../lib/display/outline_render_text.mjs';
+import outline_render_csv from '../lib/display/outline_render_csv.mjs';
 
 export default async function do_outline() {
 	let input = process.stdin,
@@ -31,8 +33,11 @@ export default async function do_outline() {
 	let result = await outliner.outline(settings.cli.lang, input);
 	
 	switch(settings.format) {
+		case "csv":
+			console.log(outline_render_csv(result));
+			break;
 		case "text":
-			console.error(`Coming soon! (try --json)`);
+			process.stdout.write(outline_render_text(result));
 			break;
 		case "json":
 			await write_safe(output, JSON.stringify(result, null, `\t`));

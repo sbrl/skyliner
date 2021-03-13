@@ -4,7 +4,7 @@
   "description": "Universal outlining engine. Generate an outline of any text-based document! CLI included.",
   "main": "src/index.mjs",
   "scripts": {
-    "test": "echo \"Error: no tests implemented yet\" && exit 1"
+    "test": "node_modules/.bin/ava tests/test.mjs"
   },
   "repository": {
     "type": "git",
