@@ -76,10 +76,9 @@ class Lexer {
 				if(typeof match_rule.depth_set == "number")
 					depth = match_rule.depth_set;
 				
-				if(match_rule.ends instanceof Array && stack.lenngth > 0) {
-					for(let target_rule_name in match_rule.ends) {
-						if(stack[stack.length-1][this.sym_debug].rule_name === target_rule_name) {
-							console.log(`[DEBUG] target_rule_name`, target_rule_name, `parent rule_name`, stack[stack.length-1][this.sym_debug].rule_name);
+				if(match_rule.ends instanceof Array && stack.length > 0) {
+					for(let target_rule_name of match_rule.ends) {
+						if(stack[stack.length-1][this.sym_debug].rule_name === target_rule_name && stack[stack.length-1].depth <= depth) {
 							stack.pop();
 							break;
 						}
