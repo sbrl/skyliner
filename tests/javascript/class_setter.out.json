@@ -11,7 +11,7 @@
 				"line": 3,
 				"index": 1,
 				"type": "property",
-				"text": "get foo()"
+				"text": "set bar(value)"
 			}
 		]
 	}
