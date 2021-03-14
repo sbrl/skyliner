@@ -28,7 +28,13 @@ for(let lang of fs.readdirSync(__dirname)) {
 	if(!(fs.lstatSync(dir)).isDirectory()) continue;
 	
 	let files = fs.readdirSync(dir)
-		.map((el) => { let m = el.match(/([^.]+)\.(in|out)/); return [ m[1], m[2], el ]});
+		.map((el) => {
+			let m = el.match(/([^.]+)\.(in|out)/);
+			if(m == null) {
+				console.error(`Warning: Filename may be wrong on '${el}'`);
+			}
+			return [ m[1], m[2], el ]
+		});
 	
 	let grouped = {};
 	for(let [ test_name, file_type, filename ] of files) {
