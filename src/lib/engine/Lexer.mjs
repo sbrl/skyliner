@@ -21,6 +21,7 @@ class Lexer {
 	async *iterate(source) {
 		const reader = nexline({ input: source });
 		
+		let stack = [];
 		let line_number = 0, depth = 0;
 		for await (let line of reader) {
 			let index = 0;
@@ -31,6 +32,8 @@ class Lexer {
 					match_text;
 				
 				for(let [ rule_name, rule ] of this.sm) {
+					if(stack.length > 0 && typeof rule.parent_type == "string" && stack[stack.length-1].type !== rule.parent_type) continue;
+					
 					rule.regex.lastIndex = index;
 					let match_current = rule.regex.exec(line);
 					if(match_current == null
@@ -52,8 +55,12 @@ class Lexer {
 				if(typeof match_rule.depth_delta === "number")
 					depth += match_rule.depth_delta;
 				
+				// Remove extras from the stack
+				while(stack.length > 0 && depth <= stack[stack.length-1].depth)
+					stack.pop();
+				
 				if(match_rule.outline) {
-					yield {
+					let result = {
 						depth,
 						line: line_number,
 						index: match_index,
@@ -67,6 +74,8 @@ class Lexer {
 							rule: match_rule
 						}
 					};
+					yield result;
+					stack.push(result);
 				}
 				
 				index = match_index + match_text.length;

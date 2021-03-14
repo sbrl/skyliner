@@ -14,6 +14,11 @@ export default {
 			group_index: 1,
 			outline: "class"
 		},
+		class_function: {
+			regex: /(?:async\s+)?[a-zA-Z]\w+\s*\([^())]*\)(?=\s*\{)/,
+			parent_type: "class",
+			outline: "function"
+		},
 		comment_single: {
 			regex: /\/\//g,
 			switch_state: "comment_single",
