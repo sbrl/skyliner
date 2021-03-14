@@ -34,7 +34,7 @@ export default {
 			outline: "function"
 		},
 		class_property: {
-			regex: /((?:public|private|protected)\s+)[a-zA-Z]\w*/,
+			regex: /((?:public|private|protected)\s+)\$[a-zA-Z]\w*/,
 			parent_type: "class",
 			outline: "property",
 			children: false
