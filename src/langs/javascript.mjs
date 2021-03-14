@@ -36,7 +36,7 @@ export default {
 	// Single-line comments
 	comment_single: {
 		eol: {
-			regex: /\n/,
+			regex: /$/,
 			switch_state: "default"
 		}
 	},
