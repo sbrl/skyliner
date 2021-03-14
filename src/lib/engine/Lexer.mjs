@@ -93,10 +93,12 @@ class Lexer {
 						}
 					};
 					yield result;
+					
+					
 					// Remove extras from the stack
-					console.log(`[STACK] length`, stack.length, `depth`, depth, `top_item_depth`, stack.length > 0 ? stack[stack.length-1].depth : 0);
+					// console.log(`[STACK] length`, stack.length, `depth`, depth, `top_item_depth`, stack.length > 0 ? stack[stack.length-1].depth : 0);
 					while(stack.length > 0 && stack[stack.length-1].depth >= depth) {
-						console.log(`[STACK:pop] length`, stack.length, `depth`, depth, `top_item_depth`, stack[stack.length-1].depth);
+						// console.log(`[STACK:pop] length`, stack.length, `depth`, depth, `top_item_depth`, stack[stack.length-1].depth);
 						stack.pop();
 					}
 					
