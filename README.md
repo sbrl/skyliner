@@ -22,6 +22,7 @@ The following languages are currently supported:
  - json
  - lua
  - markdown
+ - toml
 
 See below for how to add support for a new language.
 
@@ -56,7 +57,8 @@ Type        | Meaning
 function    | A function
 class       | A class
 namespace   | A namespace or other logical grouping element
-property    | A property on a class or object - e.g. a getter or setter
+object      | An object or table containing multiple values
+property    | A property on a class or object
 heading     | A heading in some kind of text document (e.g. markdown)
 
 
