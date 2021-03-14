@@ -64,6 +64,7 @@ class Lexer {
 					stack.pop();
 				
 				if(match_rule.outline) {
+					// It matches! Yield it.
 					let result = {
 						depth,
 						line: line_number,
@@ -79,8 +80,14 @@ class Lexer {
 						}
 					};
 					yield result;
+					// Push it onto the stack
 					stack.push(result);
 				}
+				
+				// If we need to switch states, do so
+				if(typeof match_rule.switch_state == "string")
+					this.sm.set_state(match_rule.switch_state);
+				
 				
 				index = match_index + match_text.length;
 				// If this match takes us to the end of the line, then there's no point in doing another round

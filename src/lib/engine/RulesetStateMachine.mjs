@@ -36,6 +36,13 @@ class RulesetStateMachine {
 		}
 	}
 	
+	set_state(new_state_name) {
+		if(typeof this.states[new_state_name] === "undefined")
+			throw new Error(`[RulesetStateMachine] Error: Can't set state to '${new_state_name}' because it doesn't exist.`);
+		
+		this.state = new_state_name;
+	}
+	
 	*[Symbol.iterator]() {
 		for(let rule_name in this.states[this.state])
 			yield [ rule_name, this.states[this.state][rule_name] ];
