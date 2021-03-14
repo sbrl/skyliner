@@ -19,6 +19,7 @@ The following languages are currently supported:
 
  - csharp
  - javascript
+ - json
  - lua
  - markdown
 
