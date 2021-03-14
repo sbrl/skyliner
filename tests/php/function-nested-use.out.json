@@ -1,0 +1,18 @@
+[
+	{
+		"depth": 0,
+		"line": 3,
+		"index": 0,
+		"type": "function",
+		"text": "function FunctionName($value='')",
+		"children": [
+			{
+				"depth": 1,
+				"line": 5,
+				"index": 5,
+				"type": "function",
+				"text": "function ($value) use ($invindex)"
+			}
+		]
+	}
+]
