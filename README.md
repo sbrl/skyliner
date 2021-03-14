@@ -22,6 +22,7 @@ The following languages are currently supported:
  - json
  - lua
  - markdown
+ - php
  - toml
 
 See below for how to add support for a new language.
