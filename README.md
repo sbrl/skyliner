@@ -41,6 +41,7 @@ Feel free to pick any of these up after checking for an existing pull request.
  - prolog
  - python
  - bash/sh
+ - sql?
  - asm?
  - wasm?
 
