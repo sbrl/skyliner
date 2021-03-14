@@ -17,7 +17,9 @@ Eventually, the goal is to implement a plugin for Atom.
 ## Supported languages
 The following languages are currently supported:
 
+ - csharp
  - javascript
+ - lua
  - markdown
 
 See below for how to add support for a new language.
