@@ -5,7 +5,7 @@ export default function(outline, depth = 0) {
 	
 	for(let item of outline) {
 		result.push(`\t`.repeat(depth));
-		result.push(`+ ${item.line}:${item.index} ${item.text}\n`);
+		result.push(`${item.line}:${item.index} ${item.text}\n`);
 		if(item.children instanceof Array)
 			result.push(this.render(item.children, depth + 1));
 	}
