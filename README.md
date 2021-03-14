@@ -18,6 +18,7 @@ Eventually, the goal is to implement a plugin for Atom.
 The following languages are currently supported:
 
  - javascript
+ - markdown
 
 See below for how to add support for a new language.
 
@@ -68,6 +69,7 @@ A rule is an object containing the following properties:
  - `regex`: RegExp - Regex to match with. This is the only required item.
  - `group_index`: Number - The index of the capturing group to use. By default the entire matched string is used by the Lexer.
  - `depth_delta`: Number - Delta value to add to the depth in the outline tree. Useful for handling brackets etc. to get the hierarchy in the generated outline correct.
+ - `depth_set`: Number - Set the depth to this value if this rule is chosen.
  - `outline`: string - The type of outline item to generate. If not specified, no outline item will be generated.
  - `switch_state`: string - The name of the alternate state to switch to. This will happen as soon as this item is chosen by the Lexer.
  - `parent_type`: string - The type of direct parent that this rule must have to trigger at all.
