@@ -28,6 +28,22 @@ The following languages are currently supported:
 
 See below for how to add support for a new language.
 
+### TODO
+Feel free to pick any of these up after checking for an existing pull request.
+
+ - html
+ - xml
+ - rust
+ - go
+ - java
+ - wren
+ - ruby
+ - prolog
+ - python
+ - bash/sh
+ - asm?
+ - wasm?
+
 
 ## Specification
 An outline consists of an array of items. The form of each item looks like this:
