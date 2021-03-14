@@ -5,24 +5,27 @@ export default {
 	default: {
 		brace_open: { regex: /[\{]/, depth_delta: 1 },
 		brace_close: { regex: /[\}]/, depth_delta: -1 },
-		function: {
-			regex: /(?:async\s+)?function\s*\*?(\s+[a-zA-Z]\w+)?\s*\([^)]*\)/g,
-			outline: "function"
+		namespace: {
+			regex: /namespace\s+(\S+)/,
+			group_index: 1,
+			outline: "namespace"
 		},
 		class: {
-			regex: /class\s+([a-zA-Z]\w+)/g,
-			group_index: 1,
+			regex: /(?:(?:public|private|protected)\s+)?class\s+([a-zA-Z]\w+)(?:\s*:\s*\S+)?/g,
 			outline: "class"
 		},
-		class_function: {
-			regex: /(?:async\s+)?[a-zA-Z]\w+\s*\([^())]*\)(?=\s*\{)/,
-			parent_type: "class",
-			outline: "function"
-		},
 		class_property: {
-			regex: /(?:get|set)\s+[a-zA-Z]\w+\s*\([^)]*\)/,
+			regex: /(?:(?:public|private|protected)\s+)[a-zA-Z][a-zA-Z0-9_<>]*\s+[a-zA-Z]\w*/,
 			parent_type: "class",
-			outline: "property"
+			outline: "property",
+			children: false
+		},
+		method: {
+			// IEnumerator IEnumerable.GetEnumerator()
+			regex: /((?:public|private|protected)\s+)([a-zA-Z]\w*)\s+([a-zA-Z]\w*(\.[a-zA-Z]\S*)?)(\s*\([^)]*\))/g,
+			parent_type: "class",
+			outline: "function",
+			children: false
 		},
 		comment_single: {
 			regex: /\/\//g,

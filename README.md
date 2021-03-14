@@ -52,6 +52,7 @@ Type        | Meaning
 ------------|------------------------------------------------------------------
 function    | A function
 class       | A class
+namespace   | A namespace or other logical grouping element
 property    | A property on a class or object - e.g. a getter or setter
 heading     | A heading in some kind of text document (e.g. markdown)
 
@@ -73,5 +74,6 @@ A rule is an object containing the following properties:
  - `outline`: string - The type of outline item to generate. If not specified, no outline item will be generated.
  - `switch_state`: string - The name of the alternate state to switch to. This will happen as soon as this item is chosen by the Lexer.
  - `parent_type`: string - The type of direct parent that this rule must have to trigger at all.
+ - `children`: boolean - Whether this item can have children or not. If false, then this item isn't put on the stack for computing `parent_type`.
 
 Only `regex` is required.

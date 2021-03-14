@@ -36,15 +36,18 @@ class Lexer {
 				
 				for(let [ rule_name, rule ] of this.sm) {
 					// console.error(`rule_name`, rule_name, `rule`, rule);
-					if(stack.length > 0 && typeof rule.parent_type == "string" && stack[stack.length-1].type !== rule.parent_type) continue;
+					if(typeof rule.parent_type == "string" && (stack.length === 0 || stack[stack.length-1].type !== rule.parent_type)) continue;
 					
 					// Run the regex
 					rule.regex.lastIndex = index;
 					let match_current = rule.regex.exec(line);
 					
 					// If it didn't match or it isn't earlier than the current match, then we're not interested
-					if(match_current == null
-						|| match_index < match_current.index) continue;
+					if(match_current == null) continue;
+					if(match_index < match_current.index) continue;
+					
+					if(match_index === match_current.index && match_text.length > match_current[rule.group_index || 0].length)
+						continue;
 					
 					// Record this match
 					match_rule_name = rule_name;
@@ -59,11 +62,11 @@ class Lexer {
 				
 				// If we didn't match anything, then there's nothing left to do here
 				if(match_rule_name == null) {
-					if(this.verbose) console.error(`${line_number}:${index} No matches found, continuing to next line`);
+					if(this.verbose) console.error(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length}, parent ${stack.length > 0 ? stack[stack.length-1][this.sym_debug].rule_name : null} No matches found, continuing to next line`);
 					break;
 				}
 				
-				if(this.verbose) console.error(`${line_number}:${index} chose ${match_rule_name}`);
+				if(this.verbose) console.error(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length} chose ${match_rule_name}, parent ${stack.length > 0 ? stack[stack.length-1][this.sym_debug].rule_name : null}`);
 				
 				// We found a match, apply the depth modifier
 				if(typeof match_rule.depth_delta === "number")
@@ -72,13 +75,8 @@ class Lexer {
 				if(typeof match_rule.depth_set == "number")
 					depth = match_rule.depth_set;
 				
-				
-				// Remove extras from the stack
-				while(stack.length > 0 && depth <= stack[stack.length-1].depth)
-					stack.pop();
-				
 				if(match_rule.outline) {
-					if(this.verbose) console.error(`${line_number}:${index} emit ${match_rule_name} text ${match_text}`);
+					if(this.verbose) console.error(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length} emit ${match_rule_name} text ${match_text}`);
 					// It matches! Yield it.
 					let result = {
 						depth,
@@ -95,8 +93,16 @@ class Lexer {
 						}
 					};
 					yield result;
+					// Remove extras from the stack
+					console.log(`[STACK] length`, stack.length, `depth`, depth, `top_item_depth`, stack.length > 0 ? stack[stack.length-1].depth : 0);
+					while(stack.length > 0 && stack[stack.length-1].depth >= depth) {
+						console.log(`[STACK:pop] length`, stack.length, `depth`, depth, `top_item_depth`, stack[stack.length-1].depth);
+						stack.pop();
+					}
+					
 					// Push it onto the stack
-					stack.push(result);
+					if(match_rule.children !== false && (stack.length == 0 || stack[stack.length-1].depth < depth))
+						stack.push(result);
 				}
 				
 				// If we need to switch states, do so
