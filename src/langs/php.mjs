@@ -1,8 +1,14 @@
 "use strict";
 
 export default {
-	// Default state
 	default: {
+		php: {
+			regex: /<\?(php)?/,
+			switch_state: "php"
+		}
+	},
+	php: {
+		nophp: { regex: /\?>/, switch_state: "default" },
 		brace_open: { regex: /\{/, depth_delta: 1 },
 		brace_close: {
 			regex: /\}/, depth_delta: -1,
@@ -18,12 +24,12 @@ export default {
 			outline: "function"
 		},
 		class: {
-			regex: /class\s+([a-zA-Z]\w+)/g,
+			regex: /class\s+([a-zA-Z]\w+)(\s+(extends|implements)\s+[a-zA-Z]\w+)*/g,
 			group_index: 1,
 			outline: "class"
 		},
 		class_function: {
-			regex: /((?:public|private|protected)\s+)function\s*\*?(\s+[a-zA-Z]\w*)?\s*\([^)]*\)(\s*:\s*[a-zA-Z]\w+)?/g,
+			regex: /((?:public|private|protected)\s+)?function\s*\*?(\s+[a-zA-Z]\w*)?\s*\([^)]*\)(\s*:\s*[a-zA-Z]\w+)?/g,
 			parent_type: "class",
 			outline: "function"
 		},
@@ -53,7 +59,7 @@ export default {
 		},
 		eol: {
 			regex: /$/,
-			switch_state: "default"
+			switch_state: "php"
 		}
 	},
 	// Multi-line comments
@@ -65,19 +71,19 @@ export default {
 		},
 		end: {
 			regex: /\*\//g,
-			switch_state: "default"
+			switch_state: "php"
 		}
 	},
 	string_double: {
 		end: {
 			regex: /"/g,
-			switch_state: "default"
+			switch_state: "php"
 		}
 	},
 	string_single: {
 		end: {
 			regex: /"/g,
-			switch_state: "default"
+			switch_state: "php"
 		}
 	}
 }

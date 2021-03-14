@@ -1,0 +1,9 @@
+[
+	{
+		"depth": 0,
+		"line": 3,
+		"index": 0,
+		"type": "function",
+		"text": "function FunctionName($value='')"
+	}
+]
