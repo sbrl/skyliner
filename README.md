@@ -17,6 +17,7 @@ Eventually, the goal is to implement a plugin for Atom.
 ## Supported languages
 The following languages are currently supported:
 
+ - clike (e.g. c, c++, header files)
  - csharp
  - javascript
  - json
