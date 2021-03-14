@@ -1,0 +1,32 @@
+[
+	{
+		"depth": 0,
+		"line": 5,
+		"index": 6,
+		"type": "class",
+		"text": "Rectangle",
+		"children": [
+			{
+				"depth": 1,
+				"line": 7,
+				"index": 0,
+				"type": "header",
+				"text": "public:"
+			}
+		]
+	},
+	{
+		"depth": 0,
+		"line": 12,
+		"index": 0,
+		"type": "function",
+		"text": "void Rectangle::set_values (int x, int y)"
+	},
+	{
+		"depth": 0,
+		"line": 17,
+		"index": 0,
+		"type": "function",
+		"text": "int main ()"
+	}
+]

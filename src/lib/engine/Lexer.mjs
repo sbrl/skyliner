@@ -37,6 +37,7 @@ class Lexer {
 				for(let [ rule_name, rule ] of this.sm) {
 					// console.error(`rule_name`, rule_name, `rule`, rule);
 					if(typeof rule.parent_type == "string" && (stack.length === 0 || stack[stack.length-1].type !== rule.parent_type)) continue;
+					if(rule.parent_type === null && stack.length > 0) continue;
 					
 					// Run the regex
 					rule.regex.lastIndex = index;
