@@ -31,7 +31,9 @@ export default {
 		comment_multi: {
 			regex: /\/\*/g,
 			switch_state: "comment_multi"
-		}
+		},
+		string_double: { regex: /"/g, switch_state: "string_double" },
+		string_single: { regex: /'/g, switch_state: "string_single" }
 	},
 	// Single-line comments
 	comment_single: {
@@ -54,6 +56,18 @@ export default {
 		},
 		end: {
 			regex: /\*\//g,
+			switch_state: "default"
+		}
+	},
+	string_double: {
+		end: {
+			regex: /"/g,
+			switch_state: "default"
+		}
+	},
+	string_single: {
+		end: {
+			regex: /"/g,
 			switch_state: "default"
 		}
 	}
