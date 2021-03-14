@@ -1,0 +1,16 @@
+[
+	{
+		"depth": 1,
+		"line": 1,
+		"index": 2,
+		"type": "property",
+		"text": "apple"
+	},
+	{
+		"depth": 1,
+		"line": 2,
+		"index": 2,
+		"type": "property",
+		"text": "orange"
+	}
+]
