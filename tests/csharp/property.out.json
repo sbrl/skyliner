@@ -1,0 +1,18 @@
+[
+	{
+		"depth": 0,
+		"line": 0,
+		"index": 0,
+		"type": "class",
+		"text": "class Apple",
+		"children": [
+			{
+				"depth": 1,
+				"line": 2,
+				"index": 1,
+				"type": "property",
+				"text": "public string PropertyName"
+			}
+		]
+	}
+]

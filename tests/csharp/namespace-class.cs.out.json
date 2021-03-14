@@ -1,0 +1,18 @@
+[
+	{
+		"depth": 0,
+		"line": 0,
+		"index": 10,
+		"type": "namespace",
+		"text": "NamespaceName",
+		"children": [
+			{
+				"depth": 1,
+				"line": 2,
+				"index": 1,
+				"type": "class",
+				"text": "class Bar"
+			}
+		]
+	}
+]

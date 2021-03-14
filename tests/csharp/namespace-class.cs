@@ -1,0 +1,7 @@
+namespace NamespaceName
+{
+	class Bar
+	{
+		
+	}
+}
