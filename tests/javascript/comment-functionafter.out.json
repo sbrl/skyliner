@@ -1,7 +1,7 @@
 [
 	{
 		"depth": 0,
-		"line": 2,
+		"line": 3,
 		"index": 0,
 		"type": "function",
 		"text": "function bar(baz)"

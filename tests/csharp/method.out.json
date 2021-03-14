@@ -1,14 +1,14 @@
 [
 	{
 		"depth": 0,
-		"line": 0,
+		"line": 1,
 		"index": 0,
 		"type": "class",
 		"text": "class Orange",
 		"children": [
 			{
 				"depth": 1,
-				"line": 2,
+				"line": 3,
 				"index": 1,
 				"type": "function",
 				"text": "public void Method()"

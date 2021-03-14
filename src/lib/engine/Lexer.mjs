@@ -24,7 +24,7 @@ class Lexer {
 		const reader = nexline({ input: source });
 		
 		let stack = [];
-		let line_number = 0, depth = 0;
+		let line_number = 1, depth = 0;
 		for await (let line of reader) {
 			// console.error(`${line_number} text: '${line}'`);
 			let index = 0;
@@ -75,6 +75,16 @@ class Lexer {
 				// Set the depth explicitly if necessary
 				if(typeof match_rule.depth_set == "number")
 					depth = match_rule.depth_set;
+				
+				if(match_rule.ends instanceof Array && stack.lenngth > 0) {
+					for(let target_rule_name in match_rule.ends) {
+						if(stack[stack.length-1][this.sym_debug].rule_name === target_rule_name) {
+							console.log(`[DEBUG] target_rule_name`, target_rule_name, `parent rule_name`, stack[stack.length-1][this.sym_debug].rule_name);
+							stack.pop();
+							break;
+						}
+					}
+				}
 				
 				if(match_rule.outline) {
 					if(this.verbose) console.error(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length} emit ${match_rule_name} text ${match_text}`);

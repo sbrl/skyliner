@@ -80,5 +80,6 @@ A rule is an object containing the following properties:
  - `switch_state`: string - The name of the alternate state to switch to. This will happen as soon as this item is chosen by the Lexer.
  - `parent_type`: string - The type of direct parent that this rule must have to trigger at all.
  - `children`: boolean - Whether this item can have children or not. If false, then this item isn't put on the stack for computing `parent_type`.
+ - `ends`: string\[\] - A list of strings naming the rule names this block is responsible for ending. If specified, if this block is picked and the item on the top of the stack matches anything in this list and the depth (after applying any changes described above) is the same as that of the item on the top of the stack, it will be removed.
 
 Only `regex` is required.

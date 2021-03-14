@@ -1,7 +1,7 @@
 [
 	{
 		"depth": 0,
-		"line": 0,
+		"line": 1,
 		"index": 0,
 		"type": "function",
 		"text": "async function test_function()"

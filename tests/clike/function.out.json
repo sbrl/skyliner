@@ -1,14 +1,14 @@
 [
 	{
 		"depth": 0,
-		"line": 4,
+		"line": 5,
 		"index": 0,
 		"type": "function",
 		"text": "int addition (int a, int b)"
 	},
 	{
 		"depth": 0,
-		"line": 11,
+		"line": 12,
 		"index": 0,
 		"type": "function",
 		"text": "int main ()"

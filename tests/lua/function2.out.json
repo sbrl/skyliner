@@ -1,14 +1,14 @@
 [
 	{
 		"depth": 1,
-		"line": 0,
+		"line": 1,
 		"index": 0,
 		"type": "function",
 		"text": "function FunctionName (args)"
 	},
 	{
 		"depth": 1,
-		"line": 4,
+		"line": 5,
 		"index": 0,
 		"type": "function",
 		"text": "function Another (args)"
