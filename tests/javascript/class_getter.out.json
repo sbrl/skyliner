@@ -1,0 +1,29 @@
+2 rule_name brace_open next / acc	 16 / undefined
+2 rule_name class next / acc	 0 / 16
+[DEBUG] Emit  class
+2 rule_name brace_open next / acc	 16 / undefined
+3 rule_name brace_open next / acc	 11 / undefined
+3 rule_name class_function next / acc	 5 / 11
+3 rule_name class_property next / acc	 1 / 5
+[DEBUG] Emit  class_property
+3 rule_name brace_open next / acc	 11 / undefined
+5 rule_name brace_close next / acc	 1 / undefined
+6 rule_name brace_close next / acc	 0 / undefined
+[
+	{
+		"depth": 0,
+		"line": 2,
+		"index": 6,
+		"type": "class",
+		"text": "SomeClass",
+		"children": [
+			{
+				"depth": 1,
+				"line": 3,
+				"index": 1,
+				"type": "property",
+				"text": "get foo()"
+			}
+		]
+	}
+]

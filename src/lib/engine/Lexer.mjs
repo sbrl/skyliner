@@ -34,11 +34,15 @@ class Lexer {
 				for(let [ rule_name, rule ] of this.sm) {
 					if(stack.length > 0 && typeof rule.parent_type == "string" && stack[stack.length-1].type !== rule.parent_type) continue;
 					
+					// Run the regex
 					rule.regex.lastIndex = index;
 					let match_current = rule.regex.exec(line);
+					
+					// If it didn't match or it isn't earlier than the current match, then we're not interested
 					if(match_current == null
 						|| match_index < match_current.index) continue;
 					
+					// Record this match
 					match_rule_name = rule_name;
 					match_rule = rule;
 					match_index = match_current.index;

@@ -51,6 +51,7 @@ Type        | Meaning
 ------------|------------------------------------------------------------------
 function    | A function
 class       | A class
+property    | A property on a class or object - e.g. a getter or setter
 heading     | A heading in some kind of text document (e.g. markdown)
 
 

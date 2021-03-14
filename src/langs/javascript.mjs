@@ -19,6 +19,11 @@ export default {
 			parent_type: "class",
 			outline: "function"
 		},
+		class_property: {
+			regex: /(?:get|set)\s+[a-zA-Z]\w+\s*\([^)]*\)/,
+			parent_type: "class",
+			outline: "property"
+		},
 		comment_single: {
 			regex: /\/\//g,
 			switch_state: "comment_single",
