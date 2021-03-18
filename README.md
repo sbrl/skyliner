@@ -79,6 +79,7 @@ namespace   | A namespace or other logical grouping element
 object      | An object or table containing multiple values
 property    | A property on a class or object
 heading     | A heading in some kind of text document (e.g. markdown)
+element     | A hierarchical element of some kind (e.g. XML / HTML)
 
 
 ## Adding a new language
@@ -94,6 +95,7 @@ A rule is an object containing the following properties:
  - `regex`: RegExp - Regex to match with. This is the only required item.
  - `group_index`: Number - The index of the capturing group to use. By default the entire matched string is used by the Lexer.
  - `depth_delta`: Number - Delta value to add to the depth in the outline tree. Useful for handling brackets etc. to get the hierarchy in the generated outline correct.
+ - `depth_delta_after`: Number - Same as `depth_delta`, but applied _after_ any outline item is emitted and any other depth handling logic.
  - `depth_set`: Number - Set the depth to this value if this rule is chosen.
  - `outline`: string - The type of outline item to generate. If not specified, no outline item will be generated.
  - `switch_state`: string - The name of the alternate state to switch to. This will happen as soon as this item is chosen by the Lexer.

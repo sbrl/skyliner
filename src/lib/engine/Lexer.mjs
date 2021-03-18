@@ -117,6 +117,10 @@ class Lexer {
 						stack.push(result);
 				}
 				
+				// Apply the post-emit depth_delta_after if it's specified
+				if(typeof match_rule.depth_delta_after == "number")
+					depth += match_rule.depth_delta_after;
+				
 				// If we need to switch states, do so
 				if(typeof match_rule.switch_state == "string")
 					this.sm.set_state(match_rule.switch_state);
