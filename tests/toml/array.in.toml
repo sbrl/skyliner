@@ -1,0 +1,9 @@
+[[array_of_tables]]
+foo = 4
+[[array_of_tables]]
+foo = 5
+[[array_of_tables]]
+foo = 6
+[[array_of_tables]]
+foo = 7
+last = true

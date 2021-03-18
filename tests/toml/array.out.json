@@ -1,0 +1,73 @@
+[
+	{
+		"depth": 1,
+		"line": 1,
+		"index": 2,
+		"type": "object",
+		"text": "array_of_tables",
+		"children": [
+			{
+				"depth": 2,
+				"line": 2,
+				"index": 0,
+				"type": "property",
+				"text": "foo"
+			}
+		]
+	},
+	{
+		"depth": 1,
+		"line": 3,
+		"index": 2,
+		"type": "object",
+		"text": "array_of_tables",
+		"children": [
+			{
+				"depth": 2,
+				"line": 4,
+				"index": 0,
+				"type": "property",
+				"text": "foo"
+			}
+		]
+	},
+	{
+		"depth": 1,
+		"line": 5,
+		"index": 2,
+		"type": "object",
+		"text": "array_of_tables",
+		"children": [
+			{
+				"depth": 2,
+				"line": 6,
+				"index": 0,
+				"type": "property",
+				"text": "foo"
+			}
+		]
+	},
+	{
+		"depth": 1,
+		"line": 7,
+		"index": 2,
+		"type": "object",
+		"text": "array_of_tables",
+		"children": [
+			{
+				"depth": 2,
+				"line": 8,
+				"index": 0,
+				"type": "property",
+				"text": "foo"
+			},
+			{
+				"depth": 2,
+				"line": 9,
+				"index": 0,
+				"type": "property",
+				"text": "last"
+			}
+		]
+	}
+]
