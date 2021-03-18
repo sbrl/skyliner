@@ -5,7 +5,7 @@ function outline_render_text(outline, depth = 0) {
 	
 	for(let item of outline) {
 		result.push(`\t`.repeat(depth));
-		result.push(`${item.line}:${item.index} ${item.text}\n`);
+		result.push(`${item.line}:${item.index} ${item.type}\t‖ ${item.text}\n`);
 		if(item.children instanceof Array)
 			result.push(outline_render_text(item.children, depth + 1));
 	}
