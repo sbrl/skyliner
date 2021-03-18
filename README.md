@@ -25,14 +25,14 @@ The following languages are currently supported:
  - markdown
  - php
  - toml
+ - xml
 
 See below for how to add support for a new language.
 
 ### TODO
 Feel free to pick any of these up after checking for an existing pull request.
 
- - html
- - xml
+ - html (for now use `xml` and make sure you close self-closing elements `<xml_style />`, because doing HTML will be very hard otherwise)
  - rust
  - go
  - java

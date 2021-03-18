@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+	<!-- yay this is a comment <strong>stuff</strong> <img /> -->
+	<to>Tove</to>
+	<from>Jani</from>
+	<heading>Reminder</heading>
+	<body>Don't forget me this weekend!</body>
+</note>

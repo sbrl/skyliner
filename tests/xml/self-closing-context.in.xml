@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note timestamp="2021-03-17T23:53:24.698Z">
+	<to>Tove</to>
+	<from>Jani</from>
+	<img src="path/to/img.src" />
+	<heading>Reminder</heading>
+	<body>Don't forget me this weekend!</body>
+</note>
