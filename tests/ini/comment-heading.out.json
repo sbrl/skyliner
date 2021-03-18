@@ -1,0 +1,16 @@
+[
+	{
+		"depth": 0,
+		"line": 1,
+		"index": 4,
+		"type": "heading",
+		"text": "heading_text"
+	},
+	{
+		"depth": 0,
+		"line": 4,
+		"index": 4,
+		"type": "heading",
+		"text": "heading_text_2"
+	}
+]

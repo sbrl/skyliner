@@ -1,0 +1,18 @@
+[
+	{
+		"depth": 1,
+		"line": 1,
+		"index": 1,
+		"type": "object",
+		"text": "some_section",
+		"children": [
+			{
+				"depth": 2,
+				"line": 3,
+				"index": 0,
+				"type": "property",
+				"text": "apple"
+			}
+		]
+	}
+]

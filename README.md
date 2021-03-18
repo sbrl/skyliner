@@ -19,6 +19,7 @@ The following languages are currently supported:
 
  - clike (e.g. c, c++, header files)
  - csharp
+ - ini
  - javascript
  - json
  - lua
