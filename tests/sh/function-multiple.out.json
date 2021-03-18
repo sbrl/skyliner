@@ -1,0 +1,30 @@
+[
+	{
+		"depth": 0,
+		"line": 3,
+		"index": 0,
+		"type": "function",
+		"text": "test_function"
+	},
+	{
+		"depth": 0,
+		"line": 8,
+		"index": 0,
+		"type": "function",
+		"text": "another"
+	},
+	{
+		"depth": 0,
+		"line": 13,
+		"index": 0,
+		"type": "function",
+		"text": "orange"
+	},
+	{
+		"depth": 0,
+		"line": 19,
+		"index": 0,
+		"type": "function",
+		"text": "finally"
+	}
+]

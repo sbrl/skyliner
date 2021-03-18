@@ -1,0 +1,16 @@
+[
+	{
+		"depth": 0,
+		"line": 4,
+		"index": 4,
+		"type": "heading",
+		"text": "this_is_a_heading"
+	},
+	{
+		"depth": 0,
+		"line": 6,
+		"index": 0,
+		"type": "function",
+		"text": "test_function"
+	}
+]

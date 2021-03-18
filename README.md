@@ -24,6 +24,7 @@ The following languages are currently supported:
  - lua
  - markdown
  - php
+ - sh (including bash)
  - toml
  - xml
 
@@ -40,7 +41,6 @@ Feel free to pick any of these up after checking for an existing pull request.
  - ruby
  - prolog
  - python
- - bash/sh
  - sql?
  - asm?
  - wasm?
