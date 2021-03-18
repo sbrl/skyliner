@@ -5,13 +5,13 @@ export default {
 	default: {
 		// TODO: Figure out how to dynamically adjust the depth here
 		table: {
-			regex: /\[([^\[\]]+)\]/,
+			regex: /^\s*\[([^\[\],]+)\]/,
 			group_index: 1,
 			outline: "object",
 			depth_set: 1
 		},
 		property: {
-			regex: /([^#\s]+)\s*=/,
+			regex: /^\s*([^#\s]+)\s*=/,
 			group_index: 1,
 			outline: "property",
 			depth_set: 2

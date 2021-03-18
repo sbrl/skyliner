@@ -1,0 +1,122 @@
+[
+	{
+		"depth": 2,
+		"line": 4,
+		"index": 0,
+		"type": "property",
+		"text": "title"
+	},
+	{
+		"depth": 1,
+		"line": 6,
+		"index": 1,
+		"type": "object",
+		"text": "owner",
+		"children": [
+			{
+				"depth": 2,
+				"line": 7,
+				"index": 0,
+				"type": "property",
+				"text": "name"
+			},
+			{
+				"depth": 2,
+				"line": 8,
+				"index": 0,
+				"type": "property",
+				"text": "dob"
+			}
+		]
+	},
+	{
+		"depth": 1,
+		"line": 10,
+		"index": 1,
+		"type": "object",
+		"text": "database",
+		"children": [
+			{
+				"depth": 2,
+				"line": 11,
+				"index": 0,
+				"type": "property",
+				"text": "enabled"
+			},
+			{
+				"depth": 2,
+				"line": 12,
+				"index": 0,
+				"type": "property",
+				"text": "ports"
+			},
+			{
+				"depth": 2,
+				"line": 13,
+				"index": 0,
+				"type": "property",
+				"text": "data"
+			},
+			{
+				"depth": 2,
+				"line": 14,
+				"index": 0,
+				"type": "property",
+				"text": "temp_targets"
+			}
+		]
+	},
+	{
+		"depth": 1,
+		"line": 16,
+		"index": 1,
+		"type": "object",
+		"text": "servers"
+	},
+	{
+		"depth": 1,
+		"line": 18,
+		"index": 1,
+		"type": "object",
+		"text": "servers.alpha",
+		"children": [
+			{
+				"depth": 2,
+				"line": 19,
+				"index": 0,
+				"type": "property",
+				"text": "ip"
+			},
+			{
+				"depth": 2,
+				"line": 20,
+				"index": 0,
+				"type": "property",
+				"text": "role"
+			}
+		]
+	},
+	{
+		"depth": 1,
+		"line": 22,
+		"index": 1,
+		"type": "object",
+		"text": "servers.beta",
+		"children": [
+			{
+				"depth": 2,
+				"line": 23,
+				"index": 0,
+				"type": "property",
+				"text": "ip"
+			},
+			{
+				"depth": 2,
+				"line": 24,
+				"index": 0,
+				"type": "property",
+				"text": "role"
+			}
+		]
+	}
+]
