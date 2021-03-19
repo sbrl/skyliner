@@ -19,6 +19,7 @@ The following languages are currently supported:
 
  - clike (e.g. c, c++, header files)
  - csharp
+ - go
  - ini
  - javascript
  - json
@@ -36,7 +37,6 @@ See below for how to add support for a new language.
 Feel free to pick any of these up after checking for an existing pull request.
 
  - html (for now use `xml` and make sure you close self-closing elements `<xml_style />`, because doing HTML will be very hard otherwise)
- - go
  - java
  - wren
  - ruby

@@ -1,0 +1,9 @@
+[
+	{
+		"depth": 0,
+		"line": 2,
+		"index": 0,
+		"type": "function",
+		"text": "func addSub(x, y int) int"
+	}
+]

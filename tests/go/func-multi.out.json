@@ -1,0 +1,30 @@
+[
+	{
+		"depth": 0,
+		"line": 1,
+		"index": 0,
+		"type": "function",
+		"text": "func main()"
+	},
+	{
+		"depth": 0,
+		"line": 7,
+		"index": 0,
+		"type": "function",
+		"text": "func addSub(x, y int)"
+	},
+	{
+		"depth": 0,
+		"line": 11,
+		"index": 0,
+		"type": "function",
+		"text": "func main_another()"
+	},
+	{
+		"depth": 0,
+		"line": 15,
+		"index": 0,
+		"type": "function",
+		"text": "func divby10(num int) (res int)"
+	}
+]
