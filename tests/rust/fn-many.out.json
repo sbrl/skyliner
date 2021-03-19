@@ -1,0 +1,23 @@
+[
+	{
+		"depth": 0,
+		"line": 1,
+		"index": 0,
+		"type": "function",
+		"text": "fn boo()"
+	},
+	{
+		"depth": 0,
+		"line": 5,
+		"index": 0,
+		"type": "function",
+		"text": "fn answer()"
+	},
+	{
+		"depth": 0,
+		"line": 9,
+		"index": 0,
+		"type": "function",
+		"text": "fn get_number(&self) -> i32 "
+	}
+]

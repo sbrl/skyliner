@@ -25,6 +25,7 @@ The following languages are currently supported:
  - lua
  - markdown
  - php
+ - rust
  - sh (including bash)
  - toml
  - xml
@@ -35,7 +36,6 @@ See below for how to add support for a new language.
 Feel free to pick any of these up after checking for an existing pull request.
 
  - html (for now use `xml` and make sure you close self-closing elements `<xml_style />`, because doing HTML will be very hard otherwise)
- - rust
  - go
  - java
  - wren
@@ -77,6 +77,7 @@ Type        | Meaning
 function    | A function
 class       | A class
 namespace   | A namespace or other logical grouping element
+interface   | An interface that defines the functionality of a class or other logical structure
 object      | An object or table containing multiple values
 property    | A property on a class or object
 heading     | A heading in some kind of text document (e.g. markdown)

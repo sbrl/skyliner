@@ -1,0 +1,9 @@
+[
+	{
+		"depth": 0,
+		"line": 1,
+		"index": 0,
+		"type": "function",
+		"text": "async fn hello()"
+	}
+]
