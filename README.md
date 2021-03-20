@@ -17,13 +17,13 @@ Eventually, the goal is to implement a plugin for Atom.
 ## Supported languages
 The following languages are currently supported:
 
- - clike (e.g. c, c++, header files)
+ - clike (e.g. c, c++, header files, aliases: `c`, `h`, `c++`, `h++`, `cpp`, `hpp`)
  - csharp
  - go
  - ini
- - javascript
+ - javascript (aliases: `js`, `mjs`)
  - json
- - latex (LaTaX,, TeX)
+ - latex (aliases: `tex`)
  - lua
  - markdown
  - php

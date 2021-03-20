@@ -3,6 +3,7 @@
 import path from 'path';
 
 import Lexer from './engine/Lexer.mjs';
+import LanguageAliases from './LanguageAliases.mjs';
 
 const __dirname = import.meta.url.slice(7, import.meta.url.lastIndexOf("/"));
 
@@ -12,10 +13,15 @@ class Skyliner {
 	}
 	
 	async __fetch_states(lang) {
+		// Normalise the language code
+		let lang_code = lang.replace(/[^a-zA-Z0-9_\-]+/g, "").toLowerCase();
+		if(typeof LanguageAliases[lang_code] === "string")
+			lang_code = LanguageAliases[lang_code];
+		
 		let filepath = path.join(
 			__dirname,
 			"../langs",
-			`${lang.replace(/[^a-zA-Z0-9_\-]+/g, "").toLowerCase()}.mjs`
+			`${lang_code}.mjs`
 		);
 		let result = (await import(filepath)).default;
 		// console.log(`[DEBUG:Skyliner/__fetch_states] result`, result);
