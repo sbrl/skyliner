@@ -111,6 +111,14 @@ import Skyliner from 'skyliner';
 
 `skyliner.outline_iterate` is an [asynchronous generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) that emits outline objects.
 
+Note also that the source to parse is passed directly to [`nexline`](https://www.npmjs.com/package/nexline), so you can pass it anything that `nexline` supports, such as:
+
+ - A readable stream (e.g. `fs.createReadStream(filepath)`)
+ - A string containing source text to iterate over
+ - A buffer of source text
+ - A file handle (e.g. `fs.openSync(filepath, "r")`)
+ - An array of any combination of the above
+
 Full automatically updated API documentation is coming soon.
 
 
