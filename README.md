@@ -34,18 +34,84 @@ The following languages are currently supported:
 
 See below for how to add support for a new language.
 
-### TODO
-Feel free to pick any of these up after checking for an existing pull request.
 
- - html (for now use `xml` and make sure you close self-closing elements `<xml_style />`, because doing HTML will be very hard otherwise)
- - java
- - wren
- - ruby
- - prolog
- - python
- - sql?
- - asm?
- - wasm?
+## Usage
+
+### Command Line Interface
+Install via npm:
+
+```bash
+npm install --global skyliner
+```
+
+Then, call skyliner like this:
+
+```bash
+skyliner --lang <language_code> --input path/to/file
+```
+
+For example:
+
+```bash
+skyliner --lang javascript --input path/to/example.js
+```
+
+You can also pipe content in via the standard input:
+
+```bash
+curl https://example.com/example.js | skyliner --lang javascript
+```
+
+Instead of the text-based output, you can also ask Skyliner to give you JSON instead:
+
+```
+skyliner --json --lang latex <path/to/file.tex
+```
+
+See below for a list of supported languages.
+
+### API
+Skyliner also has a Javascript API you can use. To get started, install Skyliner with npm:
+
+```bash
+npm install --save skyliner
+```
+
+Then, import the `Skyliner` class and start generating outlines. Here's an example:
+
+```js
+import Skyliner from 'skyliner';
+
+(async () => {
+    "use strict";
+    
+    const skyliner = new Skyliner();
+    
+    console.log(await skyliner.outline("markdown", "# Heading 1\nThis is some text.\n"));
+})();
+```
+
+This example will log an array of hierarchically-nested outline objects (see below for the spec on what they look like)
+
+You can also stream the outline objects directly, though they won't be auto-nested for you. Here's how you do that:
+
+```js
+import Skyliner from 'skyliner';
+
+(async () => {
+    "use strict";
+    
+    const skyliner = new Skyliner();
+    
+    for await (let outline_item of skyliner.outline_iterate("markdown", "# Heading 1\nThis is some text.\n"))) {
+        console.log(outline_item);
+    }
+})();
+```
+
+`skyliner.outline_iterate` is an [asynchronous generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) that emits outline objects.
+
+Full automatically updated API documentation is coming soon.
 
 
 ## Specification
@@ -107,3 +173,26 @@ A rule is an object containing the following properties:
  - `ends`: string\[\] - A list of strings naming the rule names this block is responsible for ending. If specified, if this block is picked and the item on the top of the stack matches anything in this list and the depth (after applying any changes described above) is the same as that of the item on the top of the stack, it will be removed.
 
 Only `regex` is required.
+
+### TODO
+This is a todo list of languages support for which support is planned. Feel free to pick any of these up after checking for an existing pull request. Don't feel limited to this list either - pull requests for other languages are also welcome.
+
+ - html (for now use `xml` and make sure you close self-closing elements `<xml_style />`, because doing HTML will be very hard otherwise)
+ - java
+ - wren
+ - ruby
+ - prolog
+ - python
+ - sql?
+ - asm?
+ - wasm?
+
+ 
+## Contributing
+Contributions are very welcome - both issues and pull requests! Please mention in your pull request that you release your work under the MPL-2.0 (see below).
+
+If you're feeling that way inclined, the sponsor button at the top of the page (if you're on GitHub) will take you to my Liberapay profile if you'd like to donate to say an extra thank you :-)
+
+
+## License
+Skyliner is released under the Mozilla Public License 2.0. The full license text is included in the `LICENSE` file in this repository. Tldr legal have a [great summary](https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2)) of the license if you're interested.
