@@ -1,30 +1,33 @@
 {
-  "name": "skyliner",
-  "version": "0.1.0",
-  "description": "Universal outlining engine. Generate an outline of any text-based document! CLI included.",
-  "main": "src/index_lib.mjs",
-  "scripts": {
-    "test": "node_modules/.bin/ava tests/test.mjs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sbrl/skyliner.git"
-  },
-  "keywords": [
-    "outline",
-    "text-processing"
-  ],
-  "author": "Starbeamrainbowlabs",
-  "license": "MPL-2.0",
-  "bugs": {
-    "url": "https://github.com/sbrl/skyliner/issues"
-  },
-  "homepage": "https://github.com/sbrl/skyliner#readme",
-  "devDependencies": {
-    "ava": "^3.15.0"
-  },
-  "dependencies": {
-    "applause-cli": "^1.5.1",
-    "nexline": "^1.2.2"
-  }
+	"name": "skyliner",
+	"version": "0.1.0",
+	"description": "Universal outlining engine. Generate an outline of any text-based document! CLI included.",
+	"main": "src/index_lib.mjs",
+	"scripts": {
+		"test": "node_modules/.bin/ava tests/test.mjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sbrl/skyliner.git"
+	},
+	"keywords": [
+		"outline",
+		"text-processing"
+	],
+	"author": "Starbeamrainbowlabs",
+	"license": "MPL-2.0",
+	"bugs": {
+		"url": "https://github.com/sbrl/skyliner/issues"
+	},
+	"homepage": "https://github.com/sbrl/skyliner#readme",
+	"devDependencies": {
+		"ava": "^3.15.0"
+	},
+	"dependencies": {
+		"applause-cli": "^1.5.1",
+		"nexline": "^1.2.2"
+	},
+    "bin": {
+        "skyliner": "./src/index.mjs"
+    }
 }
