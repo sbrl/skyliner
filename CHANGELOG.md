@@ -1,5 +1,5 @@
 # Changelog
-This is a changelog for _Skyliner_. I remembered to create this for the initial release, so it should be a complete record from then on.
+This is the changelog for _Skyliner_. I remembered to create this for the initial release, so it should be a complete record from then on.
 
 Release template text:
 
