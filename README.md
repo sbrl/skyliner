@@ -23,6 +23,7 @@ The following languages are currently supported:
  - ini
  - javascript
  - json
+ - latex (LaTaX,, TeX)
  - lua
  - markdown
  - php
@@ -42,7 +43,6 @@ Feel free to pick any of these up after checking for an existing pull request.
  - ruby
  - prolog
  - python
- - latex/tex
  - sql?
  - asm?
  - wasm?
