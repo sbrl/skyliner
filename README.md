@@ -9,7 +9,7 @@ It was born out of frustration that [Atom-IDE](https://ide.atom.io/) doesn't sup
 It can be used in 2 ways:
 
 1. Through the command-line interface
-2. Via the API
+2. Via the Javascript API
 
 Eventually, the goal is to implement a plugin for Atom.
 
