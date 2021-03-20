@@ -42,6 +42,7 @@ Feel free to pick any of these up after checking for an existing pull request.
  - ruby
  - prolog
  - python
+ - latex/tex
  - sql?
  - asm?
  - wasm?
