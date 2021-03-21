@@ -4,6 +4,7 @@ export default {
 	// Default state
 	default: {
 		h1: {
+			// This wouldn't ordinarily work, but because we're matching against each line individually it does
 			regex: /^#\s*(.*)$/m, group_index: 1,
 			outline: "heading", depth_set: 1
 		},
