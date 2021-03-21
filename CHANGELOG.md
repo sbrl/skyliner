@@ -16,5 +16,8 @@ npm install --global skyliner # For using the CLI globally
 -----
 
 
+## v0.2 (unreleased)
+ - Yield `null` if no language definition could be found
+
 ## v0.1 (20th March 2021)
  - Initial release with 14(!) supported languages!

@@ -1,5 +1,6 @@
 "use strict";
 
+import fs from 'fs';
 import path from 'path';
 
 import Lexer from './engine/Lexer.mjs';
@@ -23,6 +24,8 @@ class Skyliner {
 			"../langs",
 			`${lang_code}.mjs`
 		);
+		if(!fs.existsSync(filename))
+			return null;
 		let result = (await import(filepath)).default;
 		// console.log(`[DEBUG:Skyliner/__fetch_states] result`, result);
 		return result;
@@ -43,6 +46,7 @@ class Skyliner {
 			stack = [];
 		
 		for await (let item of this.outline_iterate(lang, source)) {
+			if(item == )
 			// Pop items from the stack while the depth of this item is less than that of the item on the top of the stack
 			while(stack.length > 0 && item.depth <= stack[stack.length-1].depth) {
 				stack.pop();
@@ -71,13 +75,19 @@ class Skyliner {
 	/**
 	 * Generates an outline for the given input.
 	 * Operates in a streaming fashion, operating line-by-line.
+	 * If the firsst item yielded is null, then that indicates that it couldn't find a language definition for the language you specified.
 	 * @param	{string}	lang	The language of the given input.
 	 * @param	{string|stream.Readable|Buffer|Array}	source	Source input to process. Passed straight to nexline (npm package), so anything that nexline supports is supported here.
 	 * @return	{AsyncGenerator<Object>}	An asynchronous generator that emits outline items. Items are flat and NOT nested as with .outline().
 	 */
 	async *outline_iterate(lang, source) {
-		if(!(this.lexers[lang] instanceof Lexer))
-			this.lexers[lang] = new Lexer(await this.__fetch_states(lang));
+		if(!(this.lexers[lang] instanceof Lexer)) {
+			let states = await this.__fetch_states(lang);
+			// We have to yield & return in 2 separate steps here because this is an async generator
+			if(states == null) { yield null; return; }
+			
+			this.lexers[lang] = new Lexer(states);
+		}
 		
 		// We've gotta wrap like this because of the above await
 		for await (let item of this.lexers[lang].iterate(source))
