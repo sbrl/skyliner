@@ -17,6 +17,7 @@ npm install --global skyliner # For using the CLI globally
 
 ## v0.2.1 (unreleased)
  - markdown: fix some complex headings
+ - Add aliases: (`bash` and `shell`) → `sh`
 
 
 ## v0.2 (21st March 2021)

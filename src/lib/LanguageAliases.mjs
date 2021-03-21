@@ -1,6 +1,7 @@
 "use strict";
 
 export default {
+	bash: "sh",
 	c: "clike",
 	cpp: "clike",
 	"c++": "clike",
@@ -9,5 +10,6 @@ export default {
 	"h++": "clike",
 	js: "javascript",
 	mjs: "javascript",
-	tex: "latex"
+	shell: "sh",
+	tex: "latex",
 };
