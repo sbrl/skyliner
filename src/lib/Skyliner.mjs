@@ -36,17 +36,20 @@ class Skyliner {
 	 * Basically an easay-to-use wrapper around .outline_iterate().
 	 * @param	{string}	lang	The language of the given input.
 	 * @param	{string|stream.Readable|Buffer|Array}	source	Source input to process. Passed straight to nexline (npm package), so anything that nexline supports is supported here.
-	 * @return	{Promise<Object[]>}	An array of outline items. May potentially be nested via the children property thereon.
+	 * @return	{Promise<Object[]>|null}	An array of outline items. May potentially be nested via the children property thereon. If `null` is returned, then no definition could be found for the specified language.
 	 */
 	async outline(lang, source) {
 		if(typeof lang !== "string")
 			throw new Error(`Error: Expected lang to be a string, but got ${typeof lang}`);
 		
 		let outline = [],
-			stack = [];
+			stack = [], i = -1;
 		
 		for await (let item of this.outline_iterate(lang, source)) {
-			if(item == )
+			i++;
+			// If the first item is null, then that means we couldn't find a definition for the specified language.
+			if(i == 0 && item == null) return null;
+			
 			// Pop items from the stack while the depth of this item is less than that of the item on the top of the stack
 			while(stack.length > 0 && item.depth <= stack[stack.length-1].depth) {
 				stack.pop();
