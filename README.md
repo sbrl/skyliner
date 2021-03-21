@@ -70,6 +70,15 @@ skyliner --json --lang latex <path/to/file.tex
 
 See below for a list of supported languages.
 
+#### Exit Codes
+The CLI may exit with a number of different exit codes depending on the problem. Below these are catalogued.
+
+Exit code	| Meaning
+------------|------------------------------
+0			| Success
+1			| General error
+2			| Language definition not found
+
 ### API
 Skyliner also has a Javascript API you can use. To get started, install Skyliner with npm:
 
@@ -83,11 +92,11 @@ Then, import the `Skyliner` class and start generating outlines. Here's an examp
 import Skyliner from 'skyliner';
 
 (async () => {
-    "use strict";
-    
-    const skyliner = new Skyliner();
-    
-    console.log(await skyliner.outline("markdown", "# Heading 1\nThis is some text.\n"));
+	"use strict";
+	
+	const skyliner = new Skyliner();
+	
+	console.log(await skyliner.outline("markdown", "# Heading 1\nThis is some text.\n"));
 })();
 ```
 
@@ -99,13 +108,13 @@ You can also stream the outline objects directly, though they won't be auto-nest
 import Skyliner from 'skyliner';
 
 (async () => {
-    "use strict";
-    
-    const skyliner = new Skyliner();
-    
-    for await (let outline_item of skyliner.outline_iterate("markdown", "# Heading 1\nThis is some text.\n"))) {
-        console.log(outline_item);
-    }
+	"use strict";
+	
+	const skyliner = new Skyliner();
+	
+	for await (let outline_item of skyliner.outline_iterate("markdown", "# Heading 1\nThis is some text.\n"))) {
+		console.log(outline_item);
+	}
 })();
 ```
 
@@ -127,12 +136,12 @@ An outline consists of an array of items. The form of each item looks like this:
 
 ```js
 {
-    line,
-    index,
-    depth,
-    type,
-    text,
-    children,
+	line,
+	index,
+	depth,
+	type,
+	text,
+	children,
 }
 ```
 

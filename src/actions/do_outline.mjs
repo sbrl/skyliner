@@ -31,6 +31,10 @@ export default async function do_outline() {
 	const outliner = new Skyliner();
 	
 	let result = await outliner.outline(settings.cli.lang, input);
+	if(result === null) {
+		console.error(`Error: No definition found for language '${settings.cli.lang}'.`);
+		process.exit(2);
+	}
 	
 	switch(settings.format) {
 		case "csv":
