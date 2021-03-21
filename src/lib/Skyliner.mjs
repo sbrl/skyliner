@@ -1,12 +1,9 @@
 "use strict";
 
-import fs from 'fs';
-import path from 'path';
-
 import Lexer from './engine/Lexer.mjs';
+import Languages from '../AutoLanguageList.mjs'; // Note that you need to run "npm run prepare" to update this
 import LanguageAliases from './LanguageAliases.mjs';
 
-const __dirname = import.meta.url.slice(7, import.meta.url.lastIndexOf("/"));
 
 class Skyliner {
 	constructor() {
@@ -19,14 +16,9 @@ class Skyliner {
 		if(typeof LanguageAliases[lang_code] === "string")
 			lang_code = LanguageAliases[lang_code];
 		
-		let filepath = path.join(
-			__dirname,
-			"../langs",
-			`${lang_code}.mjs`
-		);
-		if(!fs.existsSync(filename))
+		if(typeof Languages[lang_code] !== "object")
 			return null;
-		let result = (await import(filepath)).default;
+		let result = Languages[lang_code];
 		// console.log(`[DEBUG:Skyliner/__fetch_states] result`, result);
 		return result;
 	}

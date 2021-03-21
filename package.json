@@ -4,7 +4,8 @@
 	"description": "Universal outlining engine. Generate an outline of any text-based document! CLI included.",
 	"main": "src/index_lib.mjs",
 	"scripts": {
-		"test": "node_modules/.bin/ava tests/test.mjs"
+		"test": "node_modules/.bin/ava tests/test.mjs",
+		"prepare": "node scripts/prepare.mjs"
 	},
 	"repository": {
 		"type": "git",
@@ -29,5 +30,8 @@
 	},
     "bin": {
         "skyliner": "./src/index.mjs"
-    }
+    },
+	"files": [
+		"src/"
+	]
 }

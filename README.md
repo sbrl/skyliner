@@ -173,7 +173,15 @@ To add support for a new language, go to `src/langs` and create a new file (or c
 
 _Skyliner_ works through a simple state machine based system. A file must have a default export of an object containing the different possible states the state machine can be in. All languages *must* at least define a "default" state, as this is the state that the engine begins in.
 
-States can have one or more rules defined therein as an object, where the keys are the names of the rules, and the values are the rules attached thereto. 
+States can have one or more rules defined therein as an object, where the keys are the names of the rules, and the values are the rules attached thereto.
+
+When you've added a new language definition file, you'll need to run this command to update the language list:
+
+```bash
+npm run prepare
+```
+
+This is because without statically defining the list of languages Skyliner would be incompatible with bundling systems like [Rollup](https://rollupjs.org/) for example.
 
 ### Rule definition
 A rule is an object containing the following properties:
