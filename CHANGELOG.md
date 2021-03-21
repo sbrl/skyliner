@@ -17,6 +17,7 @@ npm install --global skyliner # For using the CLI globally
 
 ## v0.2.1 (unreleased)
  - markdown: fix some complex headings
+ - sh: allow dashes `-` in function names
  - Add aliases: (`bash` and `shell`) → `sh`
 
 

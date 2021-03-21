@@ -6,12 +6,12 @@ export default {
 		brace_open: { regex: /\{/, depth_delta: 1 },
 		brace_close: { regex: /\}/, depth_delta: -1 },
 		function: {
-			regex: /([a-zA-Z]\w+)\s*\(\)/g,
+			regex: /([a-zA-Z][\w-]+)\s*\(\)/g,
 			outline: "function",
 			group_index: 1
 		},
 		function_alt: {
-			regex: /function\s+([a-zA-Z]\w+)(?:\s*\(\))?/,
+			regex: /function\s+([a-zA-Z][\w-]+)(?:\s*\(\))?/,
 			group_index: 1,
 			outline: "function"
 		},
