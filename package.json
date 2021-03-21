@@ -5,6 +5,7 @@
 	"main": "src/index_lib.mjs",
 	"scripts": {
 		"test": "node_modules/.bin/ava tests/test.mjs",
+		"test_watch": "node_modules/.bin/ava --watch tests/test.mjs",
 		"prepare": "node scripts/prepare.mjs"
 	},
 	"repository": {
