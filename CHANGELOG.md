@@ -16,7 +16,7 @@ npm install --global skyliner # For using the CLI globally
 -----
 
 
-## v0.2 (unreleased)
+## v0.2 (21st March 2021)
  - Yield `null` if no language definition could be found
  - Make compatible with [Rollup.js](https://https://rollupjs.org/guide/en/) and other bundlers
 
