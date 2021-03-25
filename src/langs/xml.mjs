@@ -31,7 +31,7 @@ export default {
 	// Comments
 	comment: {
 		heading: {
-			regex: /%%(\S+)%%/,
+			regex: /%%([^\s%]+)%%/,
 			outline: "heading",
 			group_index: 1
 		},

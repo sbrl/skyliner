@@ -24,7 +24,7 @@ export default {
 	// Single-line comments
 	comment_single: {
 		heading: {
-			regex: /%%(\S+)%%/,
+			regex: /%%([^\s%]+)%%/,
 			outline: "heading",
 			group_index: 1
 		},

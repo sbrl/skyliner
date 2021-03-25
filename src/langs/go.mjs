@@ -28,7 +28,7 @@ export default {
 	// Single-line comments
 	comment_single: {
 		heading: {
-			regex: /%%(\S+)%%/,
+			regex: /%%([^\s%]+)%%/,
 			outline: "heading",
 			group_index: 1
 		},
@@ -40,7 +40,7 @@ export default {
 	// Multi-line comments
 	comment_multi: {
 		heading: {
-			regex: /%%(\S+)%%/,
+			regex: /%%([^\s%]+)%%/,
 			outline: "heading",
 			group_index: 1
 		},
