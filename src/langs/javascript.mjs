@@ -4,23 +4,31 @@ export default {
 	// Default state
 	default: {
 		brace_open: { regex: /[\{]/, depth_delta: 1 },
-		brace_close: { regex: /[\}]/, depth_delta: -1 },
+		brace_close: {
+			regex: /[\}]/, depth_delta: -1,
+			ends: [ "function", "class_function", "class" ]
+		},
 		function: {
-			regex: /(?:async\s+)?function\s*\*?(\s+[a-zA-Z]\w+)?\s*\([^)]*\)/g,
+			regex: /(?:async\s+)?function\s*\*?(\s+[a-z_]\w+)?\s*\([^)]*\)/gi,
 			outline: "function"
 		},
 		class: {
-			regex: /class\s+([a-zA-Z]\w+)/g,
+			regex: /class\s+([a-z_]\w+)/gi,
 			group_index: 1,
 			outline: "class"
 		},
 		class_function: {
-			regex: /(?:async\s+)?[a-zA-Z]\w+\s*\([^())]*\)(?=\s*\{)/,
+			regex: /(?:async\s+)?\*?[a-z_]\w+\s*\([^())]*\)(?=\s*\{)/i,
+			parent_type: "class",
+			outline: "function"
+		},
+		class_function_sym: {
+			regex: /(?:async\s+)?\*?\[[a-z_][\w.]+\]\s*\([^())]*\)(?=\s*\{)/i,
 			parent_type: "class",
 			outline: "function"
 		},
 		class_property: {
-			regex: /(?:get|set)\s+[a-zA-Z]\w+\s*\([^)]*\)/,
+			regex: /(?:get|set)\s+[a-z_]\w+\s*\([^)]*\)/i,
 			parent_type: "class",
 			outline: "property"
 		},
@@ -39,7 +47,7 @@ export default {
 	// Single-line comments
 	comment_single: {
 		heading: {
-			regex: /%%(\S+)%%/,
+			regex: /%%([^\s%]+)%%/,
 			outline: "heading",
 			group_index: 1
 		},
@@ -51,7 +59,7 @@ export default {
 	// Multi-line comments
 	comment_multi: {
 		heading: {
-			regex: /%%(\S+)%%/,
+			regex: /%%([^\s%]+)%%/,
 			outline: "heading",
 			group_index: 1
 		},

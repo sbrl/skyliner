@@ -78,7 +78,8 @@ class Lexer {
 				
 				if(match_rule.ends instanceof Array && stack.length > 0) {
 					for(let target_rule_name of match_rule.ends) {
-						if(stack[stack.length-1][this.sym_debug].rule_name === target_rule_name && stack[stack.length-1].depth <= depth) {
+						if(stack[stack.length-1][this.sym_debug].rule_name === target_rule_name && stack[stack.length-1].depth >= depth) {
+							if(this.verbose) console.log(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length} pop rule_name ${stack[stack.length-1][this.sym_debug].rule_name} depth ${stack[stack.length-1].depth} / our depth ${depth}`);
 							stack.pop();
 							break;
 						}

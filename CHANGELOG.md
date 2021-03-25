@@ -16,9 +16,14 @@ npm install --global skyliner # For using the CLI globally
 -----
 
 ## v0.2.1 (unreleased)
+ - Add aliases: (`bash` and `shell`) → `sh`
+ - javascript:
+     - allow underscores `_` at the start of function & class names
+     - fix multiple methods in class
+     - allow class methods to be generators
+     - support Symbol methods with square brackets `[]`
  - markdown: fix some complex headings
  - sh: allow dashes `-` in function names
- - Add aliases: (`bash` and `shell`) → `sh`
 
 
 ## v0.2 (21st March 2021)

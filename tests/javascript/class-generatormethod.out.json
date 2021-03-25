@@ -1,0 +1,25 @@
+[
+	{
+		"depth": 0,
+		"line": 3,
+		"index": 6,
+		"type": "class",
+		"text": "SomeClass",
+		"children": [
+			{
+				"depth": 1,
+				"line": 4,
+				"index": 1,
+				"type": "function",
+				"text": "constructor()"
+			},
+			{
+				"depth": 1,
+				"line": 8,
+				"index": 1,
+				"type": "function",
+				"text": "*a_generator_method()"
+			}
+		]
+	}
+]
