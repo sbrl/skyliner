@@ -199,6 +199,10 @@ A rule is an object containing the following properties:
 
 Only `regex` is required.
 
+## Writing Tests
+TODO: Write a section here on how to implement tests
+
+
 ### TODO
 This is a todo list of languages support for which support is planned. Feel free to pick any of these up after checking for an existing pull request. Don't feel limited to this list either - pull requests for other languages are also welcome.
 
@@ -215,6 +219,8 @@ This is a todo list of languages support for which support is planned. Feel free
  
 ## Contributing
 Contributions are very welcome - both issues and pull requests! Please mention in your pull request that you release your work under the MPL-2.0 (see below).
+
+Please don't forget to implement some tests if you've found & fixed a bug or implemented support for a new language :-)
 
 If you're feeling that way inclined, the sponsor button at the top of the page (if you're on GitHub) will take you to my Liberapay profile if you'd like to donate to say an extra thank you :-)
 
