@@ -16,7 +16,7 @@ npm install --global skyliner # For using the CLI globally
 -----
 
 
-## v0.3 (unreleased)
+## v0.3 (30th March 2021)
  - wren: add language
  - javascript: Fix single quotes
  - go, php, rust, sh: fix single quote handling
