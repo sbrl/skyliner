@@ -15,6 +15,12 @@ npm install --global skyliner # For using the CLI globally
 
 -----
 
+
+## v0.3 (unreleased)
+ - Ensure that earlier Lexer sessions are not resumed after a new Lexer session begins
+     - If you need to outline multiple things at once with `Skyliner.outline_iterate()`, it is advised you create multiple `Skyliner` class instances.
+
+
 ## v0.2.1 (25th March 2021)
  - Add aliases: (`bash` and `shell`) → `sh`
  - javascript:
