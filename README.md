@@ -28,7 +28,7 @@ The following languages are currently supported:
  - markdown
  - php
  - rust
- - sh (including bash)
+ - sh (aliases: bash)
  - toml
  - wren
  - xml
