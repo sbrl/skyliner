@@ -30,6 +30,7 @@ The following languages are currently supported:
  - rust
  - sh (including bash)
  - toml
+ - wren
  - xml
 
 See below for how to add support for a new language.
@@ -208,7 +209,6 @@ This is a todo list of languages support for which support is planned. Feel free
 
  - html (for now use `xml` and make sure you close self-closing elements `<xml_style />`, because doing HTML will be very hard otherwise)
  - java
- - wren
  - ruby
  - prolog
  - python
