@@ -49,7 +49,9 @@ class Lexer {
 		
 		this.sym_debug = Symbol.for("__LEXER_DEBUG_DATA__");
 		
-		this.verbose = settings.cli.debug;
+		this.verbose = false;
+		if(typeof settings.cli == "object")
+			this.verbose = settings.cli.debug;
 	}
 	
 	async *iterate(source) {
