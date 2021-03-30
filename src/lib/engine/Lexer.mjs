@@ -11,7 +11,7 @@ class Lexer {
 			states = new RulesetStateMachine(states);
 		
 		/**
-		 * The 
+		 * Symbol to keep track of which Lexer 
 		 * @type {[type]}
 		 */
 		this.current_run = null;
@@ -53,9 +53,10 @@ class Lexer {
 	
 	async *iterate(source) {
 		let sym_run = Symbol("lexer_run"); // Even creating this multiple times, values will *always* be different.
-		this.stack.length = 0;	// Empty the stack
-		this.line_number = 0;	// Reset the line counter
-		this.depth = 0;			// Reset the depth counter
+		this.current_run = sym_run;	// Set the symbol for the current run
+		this.stack.length = 0;		// Empty the stack
+		this.line_number = 0;		// Reset the line counter
+		this.depth = 0;				// Reset the depth counter
 		
 		const reader = nexline({ input: source });
 		for await (let line of reader) {
@@ -137,7 +138,8 @@ class Lexer {
 						}
 					};
 					yield result;
-					
+					// We're back after a yield! Check the current run symbol.
+					this.__check_run_symbol(sym_run);
 					
 					// Remove extras from the stack
 					// this.__log(`[STACK] length`, this.stack.length, `depth`, depth, `top_item_depth`, this.stack.length > 0 ? this.stack[this.stack.length-1].depth : 0);
@@ -170,6 +172,11 @@ class Lexer {
 			
 			this.line_number++;
 		}
+	}
+	
+	__check_run_symbol(sym) {
+		if(this.current_run !== sym)
+			throw new Error(`Error: The current run symbol is not the same as it was when this lexing run started. Note that a given Lexer instance can only lex a 1 thing at a time - it must finish lexing 1 thing before it can lex another. However, you can give up lexing something part-way through and start on something else instead, so long as you don't try and get anything else out of the previous generator.`);
 	}
 	
 	__log(...msg) {
