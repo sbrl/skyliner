@@ -1,7 +1,7 @@
 [
 	{
 		"depth": 0,
-		"line": 1,
+		"line": 0,
 		"index": 0,
 		"type": "function",
 		"text": "fn fun_test(value: i32, f: &dyn Fn(i32) -> i32) -> i32 "

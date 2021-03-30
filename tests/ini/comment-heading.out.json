@@ -1,14 +1,14 @@
 [
 	{
 		"depth": 0,
-		"line": 1,
+		"line": 0,
 		"index": 4,
 		"type": "heading",
 		"text": "heading_text"
 	},
 	{
 		"depth": 0,
-		"line": 4,
+		"line": 3,
 		"index": 4,
 		"type": "heading",
 		"text": "heading_text_2"

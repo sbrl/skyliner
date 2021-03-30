@@ -1,14 +1,14 @@
 [
 	{
 		"depth": 1,
-		"line": 1,
+		"line": 0,
 		"index": 1,
 		"type": "object",
 		"text": "table_name",
 		"children": [
 			{
 				"depth": 2,
-				"line": 2,
+				"line": 1,
 				"index": 0,
 				"type": "property",
 				"text": "foo"

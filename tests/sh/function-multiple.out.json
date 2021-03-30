@@ -1,28 +1,28 @@
 [
 	{
 		"depth": 0,
-		"line": 3,
+		"line": 2,
 		"index": 0,
 		"type": "function",
 		"text": "test_function"
 	},
 	{
 		"depth": 0,
-		"line": 8,
+		"line": 7,
 		"index": 0,
 		"type": "function",
 		"text": "another"
 	},
 	{
 		"depth": 0,
-		"line": 13,
+		"line": 12,
 		"index": 0,
 		"type": "function",
 		"text": "orange"
 	},
 	{
 		"depth": 0,
-		"line": 19,
+		"line": 18,
 		"index": 0,
 		"type": "function",
 		"text": "finally"

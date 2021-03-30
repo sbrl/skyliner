@@ -1,14 +1,14 @@
 [
 	{
 		"depth": 0,
-		"line": 3,
+		"line": 2,
 		"index": 6,
 		"type": "class",
 		"text": "Apple",
 		"children": [
 			{
 				"depth": 1,
-				"line": 4,
+				"line": 3,
 				"index": 1,
 				"type": "function",
 				"text": "private function FunctionName(string $value = \"\") : string"

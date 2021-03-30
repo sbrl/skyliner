@@ -1,14 +1,14 @@
 [
 	{
 		"depth": 2,
-		"line": 1,
+		"line": 0,
 		"index": 0,
 		"type": "property",
 		"text": "foo"
 	},
 	{
 		"depth": 2,
-		"line": 3,
+		"line": 2,
 		"index": 0,
 		"type": "property",
 		"text": "baz"

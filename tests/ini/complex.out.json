@@ -1,21 +1,21 @@
 [
 	{
 		"depth": 1,
-		"line": 3,
+		"line": 2,
 		"index": 1,
 		"type": "object",
 		"text": "owner",
 		"children": [
 			{
 				"depth": 2,
-				"line": 4,
+				"line": 3,
 				"index": 0,
 				"type": "property",
 				"text": "name"
 			},
 			{
 				"depth": 2,
-				"line": 5,
+				"line": 4,
 				"index": 0,
 				"type": "property",
 				"text": "organization"
@@ -24,28 +24,28 @@
 	},
 	{
 		"depth": 1,
-		"line": 7,
+		"line": 6,
 		"index": 1,
 		"type": "object",
 		"text": "database",
 		"children": [
 			{
 				"depth": 2,
-				"line": 9,
+				"line": 7,
 				"index": 0,
 				"type": "property",
 				"text": "server"
 			},
 			{
 				"depth": 2,
-				"line": 10,
+				"line": 8,
 				"index": 0,
 				"type": "property",
 				"text": "port"
 			},
 			{
 				"depth": 2,
-				"line": 11,
+				"line": 9,
 				"index": 0,
 				"type": "property",
 				"text": "file"

@@ -1,35 +1,35 @@
 [
 	{
 		"depth": 1,
-		"line": 1,
+		"line": 0,
 		"index": 9,
 		"type": "heading",
 		"text": "Another test A"
 	},
 	{
 		"depth": 1,
-		"line": 2,
+		"line": 1,
 		"index": 9,
 		"type": "heading",
 		"text": "Another test B"
 	},
 	{
 		"depth": 1,
-		"line": 3,
+		"line": 2,
 		"index": 9,
 		"type": "heading",
 		"text": "Another test C"
 	},
 	{
 		"depth": 1,
-		"line": 4,
+		"line": 3,
 		"index": 9,
 		"type": "heading",
 		"text": "Another test D"
 	},
 	{
 		"depth": 1,
-		"line": 5,
+		"line": 4,
 		"index": 9,
 		"type": "heading",
 		"text": "Another test E"

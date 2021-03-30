@@ -1,28 +1,28 @@
 [
 	{
 		"depth": 0,
-		"line": 1,
+		"line": 0,
 		"index": 0,
 		"type": "function",
 		"text": "func main()"
 	},
 	{
 		"depth": 0,
-		"line": 7,
+		"line": 6,
 		"index": 0,
 		"type": "function",
 		"text": "func addSub(x, y int)"
 	},
 	{
 		"depth": 0,
-		"line": 11,
+		"line": 10,
 		"index": 0,
 		"type": "function",
 		"text": "func main_another()"
 	},
 	{
 		"depth": 0,
-		"line": 15,
+		"line": 14,
 		"index": 0,
 		"type": "function",
 		"text": "func divby10(num int) (res int)"

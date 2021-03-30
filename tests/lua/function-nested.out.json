@@ -1,14 +1,14 @@
 [
 	{
 		"depth": 1,
-		"line": 1,
+		"line": 0,
 		"index": 0,
 		"type": "function",
 		"text": "function FunctionName (args)",
 		"children": [
 			{
 				"depth": 2,
-				"line": 2,
+				"line": 1,
 				"index": 1,
 				"type": "function",
 				"text": "function Nested (args)"
