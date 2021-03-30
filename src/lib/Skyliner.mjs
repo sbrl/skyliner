@@ -47,6 +47,10 @@ class Skyliner {
 				stack.pop();
 			}
 			
+			// Record the depth of the item in the tree, as opposed to the
+			// depth in the source syntax
+			item.depth_tree = stack.length;
+			
 			// If we've emptied the stack, then add to the top-level outline
 		    if(stack.length == 0) {
 				stack.push(item);

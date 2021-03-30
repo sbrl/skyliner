@@ -16,6 +16,10 @@ npm install --global skyliner # For using the CLI globally
 -----
 
 
+## v0.3.1 (30th March 2021)
+ - `Skyliner.outline()`: Add new `depth_tree` property to items
+
+
 ## v0.3 (30th March 2021)
  - wren: add language
  - javascript: Fix single quotes

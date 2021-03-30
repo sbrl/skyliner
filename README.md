@@ -155,6 +155,10 @@ Each property is described below:
  - `text` (string): A textual string that describes the item.
  - `children`: (Array\<Object\>?): Optional. If specified, this is an array of child items.
 
+Additionally, the following property is added by `Skyliner.outline()`:
+
+ - `depth_tree` (Number): The depth in the tree at which the item is located (as opposed to the depth in the source syntax that was outlined).
+
 The following list of types can currently be returned:
 
 Type        | Meaning
