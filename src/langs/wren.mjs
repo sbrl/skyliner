@@ -35,7 +35,8 @@ export default {
 			outline: "property"
 		},
 		class_setter: {
-			regex: /[a-z_]\w+=\s*\([^)]*\)/i,
+			regex: /([a-z_]\w+=)\s*\([^)]*\)/i,
+			group_index: 1,
 			parent_type: "class",
 			outline: "property"
 		},
