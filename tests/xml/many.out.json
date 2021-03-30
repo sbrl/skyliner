@@ -1,196 +1,196 @@
 [
 	{
 		"depth": 0,
-		"line": 1,
+		"line": 0,
 		"index": 0,
 		"type": "function",
 		"text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 	},
 	{
 		"depth": 0,
-		"line": 2,
+		"line": 1,
 		"index": 1,
 		"type": "element",
 		"text": "list",
 		"children": [
 			{
 				"depth": 1,
-				"line": 3,
+				"line": 2,
 				"index": 2,
 				"type": "element",
 				"text": "item",
 				"children": [
+					{
+						"depth": 2,
+						"line": 3,
+						"index": 3,
+						"type": "element",
+						"text": "name"
+					},
 					{
 						"depth": 2,
 						"line": 4,
 						"index": 3,
 						"type": "element",
-						"text": "name"
-					},
-					{
-						"depth": 2,
-						"line": 5,
-						"index": 3,
-						"type": "element",
 						"text": "weight"
 					}
 				]
 			},
 			{
 				"depth": 1,
-				"line": 7,
+				"line": 6,
 				"index": 2,
 				"type": "element",
 				"text": "item",
 				"children": [
+					{
+						"depth": 2,
+						"line": 7,
+						"index": 3,
+						"type": "element",
+						"text": "name"
+					},
 					{
 						"depth": 2,
 						"line": 8,
 						"index": 3,
 						"type": "element",
-						"text": "name"
-					},
-					{
-						"depth": 2,
-						"line": 9,
-						"index": 3,
-						"type": "element",
 						"text": "weight"
 					}
 				]
 			},
 			{
 				"depth": 1,
-				"line": 11,
+				"line": 10,
 				"index": 2,
 				"type": "element",
 				"text": "item",
 				"children": [
+					{
+						"depth": 2,
+						"line": 11,
+						"index": 3,
+						"type": "element",
+						"text": "name"
+					},
 					{
 						"depth": 2,
 						"line": 12,
 						"index": 3,
 						"type": "element",
-						"text": "name"
-					},
-					{
-						"depth": 2,
-						"line": 13,
-						"index": 3,
-						"type": "element",
 						"text": "weight"
 					}
 				]
 			},
 			{
 				"depth": 1,
-				"line": 15,
+				"line": 14,
 				"index": 2,
 				"type": "element",
 				"text": "item",
 				"children": [
+					{
+						"depth": 2,
+						"line": 15,
+						"index": 3,
+						"type": "element",
+						"text": "name"
+					},
 					{
 						"depth": 2,
 						"line": 16,
 						"index": 3,
 						"type": "element",
-						"text": "name"
-					},
-					{
-						"depth": 2,
-						"line": 17,
-						"index": 3,
-						"type": "element",
 						"text": "weight"
 					}
 				]
 			},
 			{
 				"depth": 1,
-				"line": 19,
+				"line": 18,
 				"index": 2,
 				"type": "element",
 				"text": "item",
 				"children": [
+					{
+						"depth": 2,
+						"line": 19,
+						"index": 3,
+						"type": "element",
+						"text": "name"
+					},
 					{
 						"depth": 2,
 						"line": 20,
 						"index": 3,
 						"type": "element",
-						"text": "name"
-					},
-					{
-						"depth": 2,
-						"line": 21,
-						"index": 3,
-						"type": "element",
 						"text": "weight"
 					}
 				]
 			},
 			{
 				"depth": 1,
-				"line": 23,
+				"line": 22,
 				"index": 2,
 				"type": "element",
 				"text": "item",
 				"children": [
+					{
+						"depth": 2,
+						"line": 23,
+						"index": 3,
+						"type": "element",
+						"text": "name"
+					},
 					{
 						"depth": 2,
 						"line": 24,
 						"index": 3,
 						"type": "element",
-						"text": "name"
-					},
-					{
-						"depth": 2,
-						"line": 25,
-						"index": 3,
-						"type": "element",
 						"text": "weight"
 					}
 				]
 			},
 			{
 				"depth": 1,
-				"line": 27,
+				"line": 26,
 				"index": 2,
 				"type": "element",
 				"text": "item",
 				"children": [
+					{
+						"depth": 2,
+						"line": 27,
+						"index": 3,
+						"type": "element",
+						"text": "name"
+					},
 					{
 						"depth": 2,
 						"line": 28,
 						"index": 3,
 						"type": "element",
-						"text": "name"
-					},
-					{
-						"depth": 2,
-						"line": 29,
-						"index": 3,
-						"type": "element",
 						"text": "weight"
 					}
 				]
 			},
 			{
 				"depth": 1,
-				"line": 31,
+				"line": 30,
 				"index": 2,
 				"type": "element",
 				"text": "item",
 				"children": [
 					{
 						"depth": 2,
-						"line": 32,
+						"line": 31,
 						"index": 3,
 						"type": "element",
 						"text": "name"
 					},
 					{
 						"depth": 2,
-						"line": 33,
+						"line": 32,
 						"index": 3,
 						"type": "element",
 						"text": "weight"

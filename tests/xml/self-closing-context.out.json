@@ -1,49 +1,49 @@
 [
 	{
 		"depth": 0,
-		"line": 1,
+		"line": 0,
 		"index": 0,
 		"type": "function",
 		"text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 	},
 	{
 		"depth": 0,
-		"line": 2,
+		"line": 1,
 		"index": 1,
 		"type": "element",
 		"text": "note",
 		"children": [
 			{
 				"depth": 1,
-				"line": 3,
+				"line": 2,
 				"index": 2,
 				"type": "element",
 				"text": "to"
 			},
 			{
 				"depth": 1,
-				"line": 4,
+				"line": 3,
 				"index": 2,
 				"type": "element",
 				"text": "from"
 			},
 			{
 				"depth": 1,
-				"line": 5,
+				"line": 4,
 				"index": 2,
 				"type": "element",
 				"text": "img"
 			},
 			{
 				"depth": 1,
-				"line": 6,
+				"line": 5,
 				"index": 2,
 				"type": "element",
 				"text": "heading"
 			},
 			{
 				"depth": 1,
-				"line": 7,
+				"line": 6,
 				"index": 2,
 				"type": "element",
 				"text": "body"

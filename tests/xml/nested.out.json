@@ -1,56 +1,56 @@
 [
 	{
 		"depth": 0,
-		"line": 1,
+		"line": 0,
 		"index": 0,
 		"type": "function",
 		"text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 	},
 	{
 		"depth": 0,
-		"line": 2,
+		"line": 1,
 		"index": 1,
 		"type": "element",
 		"text": "aaa",
 		"children": [
 			{
 				"depth": 1,
-				"line": 3,
+				"line": 2,
 				"index": 2,
 				"type": "element",
 				"text": "bbb",
 				"children": [
 					{
 						"depth": 2,
-						"line": 4,
+						"line": 3,
 						"index": 3,
 						"type": "element",
 						"text": "ccc",
 						"children": [
 							{
 								"depth": 3,
-								"line": 5,
+								"line": 4,
 								"index": 4,
 								"type": "element",
 								"text": "ddd",
 								"children": [
 									{
 										"depth": 4,
-										"line": 6,
+										"line": 5,
 										"index": 5,
 										"type": "element",
 										"text": "eee",
 										"children": [
 											{
 												"depth": 5,
-												"line": 7,
+												"line": 6,
 												"index": 6,
 												"type": "element",
 												"text": "fff",
 												"children": [
 													{
 														"depth": 6,
-														"line": 8,
+														"line": 7,
 														"index": 7,
 														"type": "element",
 														"text": "ggg"
@@ -67,7 +67,7 @@
 			},
 			{
 				"depth": 1,
-				"line": 16,
+				"line": 15,
 				"index": 2,
 				"type": "element",
 				"text": "yay"
