@@ -3,6 +3,7 @@
 import nexline from 'nexline';
 
 import RulesetStateMachine from './RulesetStateMachine.mjs';
+import a from '../io/Ansi.mjs';
 
 class Lexer {
 	constructor(states) {
@@ -10,10 +11,40 @@ class Lexer {
 			states = new RulesetStateMachine(states);
 		
 		/**
+		 * The 
+		 * @type {[type]}
+		 */
+		this.current_run = null;
+		
+		/**
 		 * The state machine that holds the rules that we match against.
 		 * @type {RulesetStateMachine}
 		 */
 		this.sm = states;
+		/**
+		 * The current depth at which the Lexer is at.
+		 * This value is controlled by the instructions the state definitions
+		 * we wwere initialised with provide.
+		 * @type {Number}
+		 */
+		this.depth = null;
+		/**
+		 * The current zero-indexed line number the Lexer is scanning.
+		 * @type {Number}
+		 */
+		this.line_number = null;
+		/**
+		 * The current zero-indexed index into the current line the Lexer is scanning.
+		 * @type {Number}
+		 */
+		this.index = null;
+		/**
+		 * The current stack of items.
+		 * Note that this stack is INTERNAL, and is NOT THE SAME as the actual
+		 * depth emitted by the main Skyliner class.
+		 * @type {Array}
+		 */
+		this.stack = [];
 		
 		this.sym_debug = Symbol.for("__LEXER_DEBUG_DATA__");
 		
@@ -21,13 +52,15 @@ class Lexer {
 	}
 	
 	async *iterate(source) {
-		const reader = nexline({ input: source });
+		let sym_run = Symbol("lexer_run"); // Even creating this multiple times, values will *always* be different.
+		this.stack.length = 0;	// Empty the stack
+		this.line_number = 0;	// Reset the line counter
+		this.depth = 0;			// Reset the depth counter
 		
-		let stack = [];
-		let line_number = 1, depth = 0;
+		const reader = nexline({ input: source });
 		for await (let line of reader) {
-			// console.error(`${line_number} text: '${line}'`);
-			let index = 0;
+			// this.__log(`next line, text: '${line}'`);
+			this.index = 0;
 			while(true) {
 				let match_rule_name = null,
 					match_rule = null,
@@ -35,12 +68,12 @@ class Lexer {
 					match_text;
 				
 				for(let [ rule_name, rule ] of this.sm) {
-					// console.error(`rule_name`, rule_name, `rule`, rule);
-					if(typeof rule.parent_type == "string" && (stack.length === 0 || stack[stack.length-1].type !== rule.parent_type)) continue;
-					if(rule.parent_type === null && stack.length > 0) continue;
+					// this.__log(`rule_name`, rule_name, `rule`, rule);
+					if(typeof rule.parent_type == "string" && (this.stack.length === 0 || this.stack[this.stack.length-1].type !== rule.parent_type)) continue;
+					if(rule.parent_type === null && this.stack.length > 0) continue;
 					
 					// Run the regex
-					rule.regex.lastIndex = index;
+					rule.regex.lastIndex = this.index;
 					let match_current = rule.regex.exec(line);
 					
 					// If it didn't match or it isn't earlier than the current match, then we're not interested
@@ -63,35 +96,35 @@ class Lexer {
 				
 				// If we didn't match anything, then there's nothing left to do here
 				if(match_rule_name == null) {
-					if(this.verbose) console.error(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length}, parent ${stack.length > 0 ? stack[stack.length-1][this.sym_debug].rule_name : null} No matches found, continuing to next line`);
+					if(this.verbose) this.__log(`${a.locol}No matches found, continuing to next line${a.reset}`);
 					break;
 				}
 				
-				if(this.verbose) console.error(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length} chose ${match_rule_name}, parent ${stack.length > 0 ? stack[stack.length-1][this.sym_debug].rule_name : null}`);
+				if(this.verbose) this.__log(`${a.hicol}${a.fmagenta}choose${a.reset} ${match_rule_name}`);
 				
-				// We found a match, apply the depth modifier
+				// We found a match, apply the this.depth modifier
 				if(typeof match_rule.depth_delta === "number")
-					depth += match_rule.depth_delta;
+					this.depth += match_rule.depth_delta;
 				// Set the depth explicitly if necessary
 				if(typeof match_rule.depth_set == "number")
-					depth = match_rule.depth_set;
+					this.depth = match_rule.depth_set;
 				
-				if(match_rule.ends instanceof Array && stack.length > 0) {
+				if(match_rule.ends instanceof Array && this.stack.length > 0) {
 					for(let target_rule_name of match_rule.ends) {
-						if(stack[stack.length-1][this.sym_debug].rule_name === target_rule_name && stack[stack.length-1].depth >= depth) {
-							if(this.verbose) console.log(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length} pop rule_name ${stack[stack.length-1][this.sym_debug].rule_name} depth ${stack[stack.length-1].depth} / our depth ${depth}`);
-							stack.pop();
+						if(this.stack[this.stack.length-1][this.sym_debug].rule_name === target_rule_name && this.stack[this.stack.length-1].depth >= this.depth) {
+							if(this.verbose) this.__log(`${a.fred}pop${a.reset} rule_name ${this.stack[this.stack.length-1][this.sym_debug].rule_name} depth ${this.stack[this.stack.length-1].depth} reason:manual_ends`);
+							this.stack.pop();
 							break;
 						}
 					}
 				}
 				
 				if(match_rule.outline) {
-					if(this.verbose) console.error(`${`\t`.repeat(depth)}${line_number}:${index} s${stack.length} emit ${match_rule_name} text ${match_text}`);
+					if(this.verbose) this.__log(`${a.hicol}${a.fgreen}emit${a.reset} ${match_rule_name} text ${match_text}`);
 					// It matches! Yield it.
 					let result = {
-						depth,
-						line: line_number,
+						depth: this.depth,
+						line: this.line_number,
 						index: match_index,
 						type: match_rule.outline,
 						
@@ -107,33 +140,42 @@ class Lexer {
 					
 					
 					// Remove extras from the stack
-					// console.log(`[STACK] length`, stack.length, `depth`, depth, `top_item_depth`, stack.length > 0 ? stack[stack.length-1].depth : 0);
-					while(stack.length > 0 && stack[stack.length-1].depth >= depth) {
-						// console.log(`[STACK:pop] length`, stack.length, `depth`, depth, `top_item_depth`, stack[stack.length-1].depth);
-						stack.pop();
+					// this.__log(`[STACK] length`, this.stack.length, `depth`, depth, `top_item_depth`, this.stack.length > 0 ? this.stack[this.stack.length-1].depth : 0);
+					while(this.stack.length > 0 && this.stack[this.stack.length-1].depth >= this.depth) {
+						// this.__log(`[STACK:pop] length`, this.stack.length, `depth`, depth, `top_item_depth`, this.stack[this.stack.length-1].depth);
+						if(this.verbose) this.__log(`${a.fred}pop${a.reset} rule_name ${this.stack[this.stack.length-1][this.sym_debug].rule_name} depth ${this.stack[this.stack.length-1].depth} reason:auto`);
+						this.stack.pop();
 					}
 					
 					// Push it onto the stack
-					if(match_rule.children !== false && (stack.length == 0 || stack[stack.length-1].depth < depth))
-						stack.push(result);
+					if(match_rule.children !== false && (this.stack.length == 0 || this.stack[this.stack.length-1].depth < this.depth))
+						this.stack.push(result);
 				}
 				
 				// Apply the post-emit depth_delta_after if it's specified
 				if(typeof match_rule.depth_delta_after == "number")
-					depth += match_rule.depth_delta_after;
+					this.depth += match_rule.depth_delta_after;
 				
 				// If we need to switch states, do so
-				if(typeof match_rule.switch_state == "string")
+				if(typeof match_rule.switch_state == "string") {
+					if(this.verbose) this.__log(`${a.hicol}${a.fyellow}change_state${a.reset} ${match_rule.switch_state}`);
 					this.sm.set_state(match_rule.switch_state);
+				}
 				
 				
-				index = match_index + match_text.length;
+				this.index = match_index + match_text.length;
 				// If this match takes us to the end of the line, then there's no point in doing another round
-				if(index >= line.length) break;
+				if(this.index >= line.length) break;
 			}
 			
-			line_number++;
+			this.line_number++;
 		}
+	}
+	
+	__log(...msg) {
+		let parent = this.stack.length > 0 ? this.stack[this.stack.length-1][this.sym_debug].rule_name : `${a.locol}null${a.reset}`;
+		
+		console.error([ `${`\t`.repeat(this.depth)}${this.line_number.toString().padStart(4)}:${this.index.toString().padEnd(3)} ${a.locol}s:${a.reset}${this.stack.length}${a.locol}:${a.reset}${parent} ${a.locol}st:${a.reset}${this.sm.state.padEnd(15)}`, ...msg ].join(" "));
 	}
 }
 
