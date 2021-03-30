@@ -1,9 +1,9 @@
 [
 	{
 		"depth": 0,
-		"line": 10,
+		"line": 5,
 		"index": 0,
 		"type": "function",
-		"text": "do_work"
+		"text": "func main()"
 	}
 ]

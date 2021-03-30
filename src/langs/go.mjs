@@ -57,7 +57,7 @@ export default {
 	},
 	string_single: {
 		end: {
-			regex: /"/g,
+			regex: /'/g,
 			switch_state: "default"
 		}
 	}

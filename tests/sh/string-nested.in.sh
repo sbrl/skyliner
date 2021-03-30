@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-e="
+e='
 yay() {
-	stuff;
+	stuff "yay";
 }
-";
+';
 
 echo "${e}";
 
