@@ -1,0 +1,16 @@
+[
+	{
+		"depth": 0,
+		"line": 0,
+		"index": 12,
+		"type": "function",
+		"text": "Fiber.new"
+	},
+	{
+		"depth": 0,
+		"line": 4,
+		"index": 13,
+		"type": "function",
+		"text": "Fiber.new"
+	}
+]
