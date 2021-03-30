@@ -1,21 +1,21 @@
 [
 	{
 		"depth": 0,
-		"line": 3,
+		"line": 2,
 		"index": 6,
 		"type": "class",
 		"text": "SomeClass",
 		"children": [
 			{
 				"depth": 1,
-				"line": 4,
+				"line": 3,
 				"index": 1,
 				"type": "function",
 				"text": "constructor()"
 			},
 			{
 				"depth": 1,
-				"line": 8,
+				"line": 7,
 				"index": 1,
 				"type": "function",
 				"text": "*a_generator_method()"

@@ -1,7 +1,7 @@
 [
 	{
 		"depth": 0,
-		"line": 1,
+		"line": 0,
 		"index": 0,
 		"type": "function",
 		"text": "function* do_work()"
