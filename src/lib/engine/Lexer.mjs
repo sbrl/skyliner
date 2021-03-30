@@ -2,6 +2,7 @@
 
 import nexline from 'nexline';
 
+import settings from '../../core/settings.mjs';
 import RulesetStateMachine from './RulesetStateMachine.mjs';
 import a from '../io/Ansi.mjs';
 
@@ -48,7 +49,7 @@ class Lexer {
 		
 		this.sym_debug = Symbol.for("__LEXER_DEBUG_DATA__");
 		
-		this.verbose = process.env.DEBUG || false;
+		this.verbose = settings.cli.debug;
 	}
 	
 	async *iterate(source) {

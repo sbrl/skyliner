@@ -17,6 +17,7 @@ export default async function() {
 	cli.argument("lang", "Required. The language to parse the input as.", null, "string")
 		.argument("input", "The input file to process (default: stdin)", null, "string")
 		.argument("output", "The filepath to write the result to (default: stdout)", null, "string")
+		.argument("debug", "Enable debug mode, which writes lots of extra data to the standard error (the format of this data is subject to change and should not be parsed).", false, "boolean")
 		.argument("json", "Output JSON instead of human-readable text", false, "boolean")
 		.argument("csv", "Output CSV instead of human-readable text", false, "boolean");
 	
