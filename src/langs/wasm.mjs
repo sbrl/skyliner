@@ -29,7 +29,8 @@ export default {
 		heading: {
 			regex: /%%([^\s%]+)%%/,
 			outline: "heading",
-			group_index: 1
+			group_index: 1,
+			children: false
 		},
 		eol: {
 			regex: /$/,

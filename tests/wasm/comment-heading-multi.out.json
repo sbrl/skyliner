@@ -1,0 +1,34 @@
+[
+	{
+		"depth": 0,
+		"line": 0,
+		"index": 5,
+		"type": "heading",
+		"text": "this_is_a_heading1",
+		"depth_tree": 0
+	},
+	{
+		"depth": 0,
+		"line": 1,
+		"index": 5,
+		"type": "heading",
+		"text": "this_is_a_heading2",
+		"depth_tree": 0
+	},
+	{
+		"depth": 0,
+		"line": 2,
+		"index": 5,
+		"type": "heading",
+		"text": "this_is_a_heading3",
+		"depth_tree": 0
+	},
+	{
+		"depth": 0,
+		"line": 3,
+		"index": 5,
+		"type": "heading",
+		"text": "this_is_a_heading4",
+		"depth_tree": 0
+	}
+]

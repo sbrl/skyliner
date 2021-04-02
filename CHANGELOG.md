@@ -16,6 +16,10 @@ npm install --global skyliner # For using the CLI globally
 -----
 
 
+## v0.4 (unreleased)
+ - wasm: add language ([text format](https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format))
+
+
 ## v0.3.1 (30th March 2021)
  - `Skyliner.outline()`: Add new `depth_tree` property to items
 
