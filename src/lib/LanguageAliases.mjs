@@ -12,4 +12,5 @@ export default {
 	mjs: "javascript",
 	shell: "sh",
 	tex: "latex",
+	wat: "wasm"
 };

@@ -30,6 +30,7 @@ The following languages are currently supported:
  - rust
  - sh (aliases: bash)
  - toml
+ - wasm ([WASM text format](https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format); aliases: `wat`)
  - wren
  - xml
 
@@ -218,7 +219,6 @@ This is a todo list of languages support for which support is planned. Feel free
  - python
  - sql?
  - asm?
- - wasm?
 
  
 ## Contributing
