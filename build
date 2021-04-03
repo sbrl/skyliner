@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+# Make sure the current directory is the location of this script to simplify matters
+cd "$(dirname "$(readlink -f "$0")")" || { echo "Error: Failed to cd to script directory" >&2; exit 1; };
+################
+### Settings ###
+################
+
+# The name of this project
+project_name="skyliner";
+
+# The path to the lantern build engine git submodule
+lantern_path="./lantern-build-engine";
+
+###
+# Custom Settings
+###
+
+# Put any custom settings here.
+
+###############################################################################
+
+# Check out the lantern git submodule if needed
+if [ ! -f "${lantern_path}/lantern.sh" ]; then git submodule update --init "${lantern_path}"; fi
+
+#shellcheck disable=SC1090
+source "${lantern_path}/lantern.sh";
+
+if [[ "$#" -lt 1 ]]; then
+	echo -e "${FBLE}${project_name}${RS} build script";
+	echo -e "    by Starbeamrainbowlabs";
+	# shellcheck disable=SC2154
+	echo -e "${LC}Powered by the lantern build engine, v${version}${RS}";
+	echo -e "";
+	echo -e "${CSECTION}Usage${RS}";
+	echo -e "    ./build ${CTOKEN}{action}${RS} ${CTOKEN}{action}${RS} ${CTOKEN}{action}${RS} ...";
+	echo -e "";
+	echo -e "${CSECTION}Available actions${RS}";
+	echo -e "    ${CACTION}setup${RS}            - Initial setup & environment checks";
+	echo -e "    ${CACTION}test${RS}             - Run tests";
+	echo -e "    ${CACTION}ci${RS}               - Run CI tasks";
+	echo -e "";
+	
+	exit 1;
+fi
+
+###############################################################################
+
+task_setup() {
+	task_begin "Setting up";
+	
+	check_command git true;
+	check_command node true;
+	check_command npm true;
+	
+	subtask_begin "Installing dependencies";
+	npm install;
+	subtask_end $?;
+	
+	subtask_begin "Initialising submodules";
+	git submodule update --init;
+	subtask_end $?;
+	
+	task_end 0;
+}
+
+task_test() {
+	task_begin "Running tests";
+	npm test;
+	task_end "$?";
+}
+
+task_ci() {
+	tasks_run setup test;
+}
+
+###############################################################################
+
+tasks_run "$@";
