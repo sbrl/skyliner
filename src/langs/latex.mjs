@@ -32,5 +32,9 @@ export default {
 			regex: /\\subparagraph\*?\{(.*)\}/, group_index: 1,
 			outline: "heading", depth_set: 6
 		},
+		label: {
+			regex: /\\label\*?\{(.*)\}/, group_index: 1,
+			outline: "heading", children: false
+		}
 	}
 }
