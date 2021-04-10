@@ -1,0 +1,42 @@
+[
+	{
+		"depth": 0,
+		"line": 0,
+		"index": 0,
+		"type": "function",
+		"text": "FROM minideb1 AS builder1",
+		"depth_tree": 0
+	},
+	{
+		"depth": 0,
+		"line": 1,
+		"index": 0,
+		"type": "function",
+		"text": "FROM minideb2 AS builder2",
+		"depth_tree": 0
+	},
+	{
+		"depth": 0,
+		"line": 2,
+		"index": 0,
+		"type": "function",
+		"text": "FROM minideb3 AS builder3",
+		"depth_tree": 0
+	},
+	{
+		"depth": 0,
+		"line": 3,
+		"index": 0,
+		"type": "function",
+		"text": "FROM minideb4 AS builder4",
+		"depth_tree": 0
+	},
+	{
+		"depth": 0,
+		"line": 4,
+		"index": 0,
+		"type": "function",
+		"text": "FROM minideb5 AS builder5",
+		"depth_tree": 0
+	}
+]

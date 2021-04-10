@@ -1,0 +1,10 @@
+[
+	{
+		"depth": 0,
+		"line": 0,
+		"index": 0,
+		"type": "function",
+		"text": "ENTRYPOINT [ \"/usr/local/bin/redis-server\" ]",
+		"depth_tree": 0
+	}
+]

@@ -1,0 +1,10 @@
+[
+	{
+		"depth": 0,
+		"line": 0,
+		"index": 0,
+		"type": "function",
+		"text": "COPY --from=builder run.sh /srv/run.sh",
+		"depth_tree": 0
+	}
+]

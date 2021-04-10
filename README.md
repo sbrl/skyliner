@@ -19,6 +19,7 @@ The following languages are currently supported:
 
  - clike (e.g. c, c++, header files, aliases: `c`, `h`, `c++`, `h++`, `cpp`, `hpp`)
  - csharp
+ - dockerfile
  - go
  - ini
  - javascript (aliases: `js`, `mjs`)

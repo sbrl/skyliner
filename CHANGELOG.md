@@ -18,6 +18,7 @@ npm install --global skyliner # For using the CLI globally
 
 ## v0.4 (unreleased)
  - wasm: add language ([text format](https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format))
+ - dockerfile: add language
  - latex: add `\label` support
 
 
